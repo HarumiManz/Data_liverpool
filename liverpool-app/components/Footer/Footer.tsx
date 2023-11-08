@@ -3,19 +3,21 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="m-20 mx-auto">
+    <div className="mx-auto">
       <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800">
+        <hr className="pb-10 border-gray-400" />
         <div className="md:flex md:justify-between">
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-5">
-            <div className="mb-6 md:mb-0">
+            <div className="mb-6 md:mb-0 flex items-center justify-center text-center">
               <ul>
                 <Image
+                  className="flex items-center justify-center"
                   src="/images/logoItesm.png"
                   alt="Logo tec "
                   width={200}
                   height={200}
                 />
-                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                <span className=" text-center text-xl font-semibold whitespace-nowrap dark:text-white">
                   ITESM
                 </span>
               </ul>
@@ -100,8 +102,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
+        <hr className="my-6 border-gray-400 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div className="sm:flex sm:items-center sm:justify-between bg-pink-50">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{" "}
             <a
