@@ -105,7 +105,7 @@ export default function Footer() {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{" "}
             <a
-              href="https://flowbite.com"
+              href="https://tec.mx/es/estado-de-mexico"
               target="_blank"
               className="hover:underline"
             >
@@ -115,7 +115,7 @@ export default function Footer() {
           </span>
           <div className="flex mt-4 mx-10 space-x-6 sm:justify-center sm:mt-0">
             <a
-              href="#"
+              href="https://github.com/HarumiManz/Data_liverpool"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
