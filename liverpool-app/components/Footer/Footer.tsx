@@ -17,7 +17,7 @@ export default function Footer() {
                   width={200}
                   height={200}
                 />
-                <span className=" text-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                <span className=" py-10 text-center text-xl font-semibold whitespace-nowrap dark:text-white">
                   ITESM
                 </span>
               </ul>
@@ -103,13 +103,13 @@ export default function Footer() {
           </div>
         </div>
         <hr className="my-6 border-gray-400 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between bg-pink-50">
+        <div className="sm:flex sm:items-center sm:justify-between bg-white">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{" "}
             <a
               href="https://tec.mx/es/estado-de-mexico"
               target="_blank"
-              className="hover:underline"
+              className="hover:underline "
             >
               Itesm
             </a>
