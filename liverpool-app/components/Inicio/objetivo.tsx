@@ -13,7 +13,7 @@ export default function Objetivo() {
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">
-            <article className="p-6 py-10 bg-gradient-to-t from-pink-200 to-bg-pink-200 rounded-lg border border-gray-200 shadow-md">
+            <article className="p-6 py-10 bg-gradient-to-t from-pink-200 to-bg-pink-200 rounded-lg border border-gray-100 shadow-md">
               <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Objetivo
               </h2>
@@ -25,7 +25,7 @@ export default function Objetivo() {
               </p>
               <div className="flex justify-between items-center"></div>
             </article>
-            <article className="p-6 py-10 bg-gradient-to-t from-pink-200 to-bg-pink-200 rounded-lg border border-gray-200 shadow-md">
+            <article className="p-6 py-10 bg-gradient-to-t from-pink-200 to-bg-pink-200 rounded-lg border border-gray-100 shadow-md">
               <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Ventajas
               </h2>
