@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Visualizacion(){
 
     return (
@@ -7,6 +9,13 @@ export default function Visualizacion(){
               Visualización 
             </h1>
           </div>
+          <Image
+        src="/images/bolo1.png"
+        alt="analitica "
+        width={300}
+        height={300}
+        className="px-10"
+      />
         </header>
       );
     }
