@@ -10,9 +10,9 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-
 // También se importa el tipo de gráfica
 import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
 
 // Estos valores se declaran previamente para ser usados luego
 ChartJS.register(
@@ -24,24 +24,26 @@ ChartJS.register(
 )
 
 export default function Barra() {
-
+  const labels = ['Sun', 'Mon', 'Tue']
   /* Se declaran las constantes "data" y "options" 
   (options puede estar vació). En "data" se declaran los
   'labels' y 'data' en valores de tipo <list>. 
   'label' es un string, los colores pueden ser valores
   predeterminados o valores RGB. El borde son valores numéricos.*/
     const data = {
-      labels: ['Sun', 'Mon', 'Tue'],
+      labels,
       datasets: [
         {
           label: '398',
-          data: [3, 6, 9],
+          data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
           backgroundColor: 'aqua',
           borderColor: 'black',
           borderWidth: 1,
         }
       ]
-    } 
+    }
+    //const data = await getAquisitionsByYear();
+
     const options = {}
   
       /* Los valores 'data' y 'options' que se encuentran

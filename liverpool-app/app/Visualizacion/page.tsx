@@ -1,4 +1,4 @@
-import { Barra } from '@/components/Visualizacion';
+import { Barra, Dispersion, BarraDoble, Pay, Lineal } from '@/components/Visualizacion';
 
 export default function Visualizacion() {
     return (
@@ -9,6 +9,10 @@ export default function Visualizacion() {
             </h1>
             <div className='p-10'>
               <Barra/>
+              <Dispersion/>
+              <BarraDoble/>
+              <Pay/>
+              <Lineal/>
             </div>
           </div>
         </header>
