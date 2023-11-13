@@ -8,11 +8,6 @@ import os
 app = Flask("Back Liverpool")
 CORS(app)
 
-
-@app.route("/ping")
-def ping():
-    return jsonify({"message" : "hello world!"})
-
 @app.route("/upload", methods=["POST"])
 def upload():
     try:

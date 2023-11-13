@@ -7,16 +7,6 @@ export default function Archivo() {
   const [fileResponse, setfileResponse] = useState<any>(null);
 
   const [data, setData] = useState(null);
-  const handleClick = async () => {
-    try {
-      let response = await fetch("http://10.48.108.34:5000/ping");
-      let data = await response.json();
-      console.log(data);
-      setData(data.message);
-    } catch (err) {
-      console.log("Ha habido un error");
-    }
-  };
 
   const handleSubmitFile = async () => {
     if (file) {
@@ -32,10 +22,10 @@ export default function Archivo() {
           setfileResponse(data);
           console.log("Resultado : ", data);
         } else {
-          console.log("error subienod archivp");
+          console.log("error subiendo archivo");
         }
       } catch (err) {
-        console.log("error subienod archivp");
+        console.log("error subiendo archivo");
       }
     }
   };
@@ -44,39 +34,61 @@ export default function Archivo() {
     <>
       <div className="bg-white px-20 py-10">
         <div>
-          <h1 className="pb-10 text-3xl font-bold tracking-tight text-gray-800">
+          <h1 className=" text-3xl font-bold tracking-tight text-gray-800">
             Herramienta de predicción
           </h1>
         </div>
-        <button onClick={handleClick}>LCicke</button>
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2">
-          <div className=" bg-pink-100 rounded-md p-10">
-            <h1 className="text-2xl font-medium text-pink-950"> Cargar Archivo </h1>
-            <p className="text-xl font-light text-gray-800 pt-3"> Solo archivos .xlsx con menos de 1 Gb</p>
-            <input
-              type="file"
-              accept=".csv,.xls"
-              placeholder="Archivo CSV" 
-              className="my-8 block"
-              onChange={(e) => setFile(e.target.files?.[0] || null)}
-            />
-            <button onClick={handleSubmitFile} className="block my-10">
-              Subir Archivo
-            </button>
-            <div>
-              {fileResponse
-                ? fileResponse.message + " lineas : " + fileResponse.lines
-                : "No se ha subido archivo"}
+          <div className=" bg-pink-100 shadow-md rounded-md p-10 m-5">
+            <h1 className="text-2xl font-medium text-pink-950">
+              Cargar Archivo
+            </h1>
+            <p className="text-xl font-light text-gray-800 pt-3">
+              Solo archivos .xlsx con menos de 1 Gb
+            </p>
+            <div className="rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
+              <input
+                type="file"
+                accept=".csv,.xls"
+                placeholder="Archivo CSV"
+                className="m-8 block"
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
+              />
+              <div className="px-8 flex justify-center items-center">
+                <button
+                  onClick={handleSubmitFile}
+                  className="py-2.5 px-10 mr-2 mb-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-pink-700 focus:z-10 focus:ring-4 focus:ring-pink-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-pink-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-pink-700"
+                >
+                  Subir Archivo
+                </button>
+              </div>
+
+              <div>
+                {fileResponse
+                  ? fileResponse.message + " lineas : " + fileResponse.lines
+                  : "No se ha subido archivo"}
+              </div>
             </div>
           </div>
-          <div>
-            <Image
-              src="/images/bolo1.png"
-              alt="analitica "
-              width={300}
-              height={300}
-              className="px-10"
-            />
+          <div className=" bg-pink-100 shadow-md rounded-md p-10 m-5">
+            <h2 className="text-2xl font-medium text-pink-950">
+              Descarga tu nuevo Excel
+            </h2>
+            <h1 className="text-xl font-light text-gray-800 pt-3">
+              {" "}
+              Puedes Descargar tu nuevo excel con la nueva columna agregada con
+              el resultado de tu predicción
+            </h1>
+            <div className=" rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
+              <h3 className="py-5 px-3">
+                Nuevo excel
+              </h3>
+              <div className="px-8 flex justify-center items-center">
+                <button className=" py-2.5 px-10 mr-2 mb-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-pink-700 focus:z-10 focus:ring-4 focus:ring-pink-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-pink-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-pink-700">
+                  Descargar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
+
 import { Barra, Dispersion, BarraDoble, Pay, Lineal } from '@/components/Visualizacion';
+
+import Image from "next/image";
 
 export default function Visualizacion() {
     return (
@@ -15,6 +18,13 @@ export default function Visualizacion() {
               <Lineal/>
             </div>
           </div>
+          <Image
+        src="/images/bolo1.png"
+        alt="analitica "
+        width={300}
+        height={300}
+        className="px-10"
+      />
         </header>
       );
 }
