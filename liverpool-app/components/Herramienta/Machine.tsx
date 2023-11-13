@@ -3,7 +3,10 @@ import Image from "next/image";
 export default function Machine() {
   return (
     <>
-      <section id="Machine" className="bg-gradient-to-r from-purple-300 via-white to-white">
+      <section
+        id="Machine"
+        className="bg-gradient-to-r from-purple-300 via-white to-white"
+      >
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <Image
             src="/images/img2.png"
@@ -14,12 +17,14 @@ export default function Machine() {
           />
           <div className="mt-4 md:mt-0">
             <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-purple-950 dark:text-white">
-              Prueba nuestra herramienta para predicción de renuncias!
+            ¡Anticípate a la rotación laboral y fortalece a tu equipo!
+
             </h2>
-            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-              Flowbite helps you connect with friends and communities of people
-              who share your interests. Connecting with your friends and family
-              as well as discovering new ones is easy with features like Groups.
+            <p className="mb-6 font-light text-gray-700 md:text-lg dark:text-gray-400">
+              Utiliza nuestro modelo predictivo con una precisión del 98% donde
+              podrás visualizar cuántos y qué empleados se encuentran más
+              propensos a renunciar, recuerda que nuestro objetivo es disminuir
+              la rotación laboral ¡Cuidando nuestro talento!
             </p>
             <a
               href="#Machine"

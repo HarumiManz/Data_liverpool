@@ -4,11 +4,11 @@ export default function Datos() {
   return (
     <>
       <section className="bg-white dark:bg-gray-900">
-        <div className="pt-14 mx-auto max-w-screen-sm ">
+        <div className="pt-14 mx-auto px-20 ">
           <h2 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white">
             ¿En dónde estamos parados?
           </h2>
-          <p className="flex justify-center items-center mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+          <p className="pb-5 px-20 flex justify-center items-center text-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
             Grupo Puerto Liverpool cuenta con aproximadamente una población de
             73,330 colaboradores los cuales se ubican principalmente en
             Suburbia, CeDis y Liverpool pero debido a la rotación de empleados
@@ -18,7 +18,7 @@ export default function Datos() {
         <div className="grid mb-8 lg:mb-12 lg:grid-cols-3">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
                 LIVERPOOL
               </h3>
               <p className="my-4">
@@ -38,7 +38,7 @@ export default function Datos() {
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
                 CEDIS
               </h3>
               <p className="my-4">
@@ -58,7 +58,7 @@ export default function Datos() {
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
                 SUBURBIA
               </h3>
               <p className="my-4">
@@ -77,63 +77,76 @@ export default function Datos() {
             </figcaption>
           </figure>
         </div>
+        <div className="pt-14 mx-auto">
+          <h1 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white"> ¿Tu o tu equipo son propensos a renunciar?</h1>  
+          <p className="px-20 flex justify-center items-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
+            Dentro de las tres tiendas antes mencionadas la baja de personal no
+            es igual en todos los puestos, existen algunos con más riesgo.
+          </p >
+          <p className="px-20 pb-5 flex justify-center items-center text-center mb-8 font-light text-gray-700 lg:mb-10 sm:text-xl dark:text-gray-400">
+            Los puestos con mayor tasa de renuncia sufren de aproximadamente 6
+            cambios en un lapso menor a 1 año, lo que podría jugar un papel
+            significativo en la alta tasa de renuncias dentro de la
+            organización.
+          </p>
+        </div>
         <div className="grid mb-8 lg:mb-12 lg:grid-cols-3">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
                 LIVERPOOL
               </h3>
               <p className="my-4">
-                El 70% de la fuerza laboral dentro de Liverpool para cubrir
-                todas sus posiciones.
+                Cajero es el cuarto puesto con myor población, pero necesitas
+                1.2 personas para cubrir 1 posición.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa1.jpeg"
+                src="/images/burbuja1.jpeg"
                 alt="analitica "
-                width={300}
-                height={300}
+                width={350}
+                height={350}
                 className="px-10"
               />
             </figcaption>
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
                 CEDIS
               </h3>
               <p className="my-4">
-                3 veces toda la fuerza laboral de CeDis para cubrir todas sus
-                posiciones.
+                Recepción es el segundo puesto con más población, pero necesitas
+                contratar 5 personas para cubrir 1 posición.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa2.jpeg"
+                src="/images/burbuja3.jpeg"
                 alt="analitica "
-                width={300}
-                height={300}
+                width={700}
+                height={700}
                 className="px-10 "
               />
             </figcaption>
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
                 SUBURBIA
               </h3>
               <p className="my-4">
-                1.5 veces toda la fuerza laboral de Suburbia para cubrir todas
-                sus posiciones.
+                Cajero es el segundo puesto con más población, pero necesitas
+                contratar 3 personas para cubrir 1 posición.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa3.jpeg"
+                src="/images/burbuja2.jpeg"
                 alt="analitica "
-                width={300}
-                height={300}
+                width={600}
+                height={600}
                 className="px-10 "
               />
             </figcaption>
