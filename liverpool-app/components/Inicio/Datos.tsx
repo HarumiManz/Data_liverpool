@@ -18,11 +18,11 @@ export default function Datos() {
         <div className="grid mb-8 lg:mb-12 lg:grid-cols-3">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
+              <h3 className="text-lg font-bold text-pink-900 dark:text-white">
                 LIVERPOOL
               </h3>
               <p className="my-4">
-                El 70% de la fuerza laboral dentro de Liverpool para cubrir
+                El <span className="text-2xl font-bold text-pink-700">70%</span> de la fuerza laboral dentro de Liverpool para cubrir
                 todas sus posiciones.
               </p>
             </blockquote>
@@ -38,11 +38,11 @@ export default function Datos() {
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
+              <h3 className="text-lg font-bold text-pink-900 dark:text-white">
                 CEDIS
               </h3>
               <p className="my-4">
-                3 veces toda la fuerza laboral de CeDis para cubrir todas sus
+                <span className="text-2xl font-bold text-pink-700">3 veces</span> toda la fuerza laboral de CeDis para cubrir todas sus
                 posiciones.
               </p>
             </blockquote>
@@ -58,11 +58,11 @@ export default function Datos() {
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
+              <h3 className="text-lg font-bold text-pink-900 dark:text-white">
                 SUBURBIA
               </h3>
               <p className="my-4">
-                1.5 veces toda la fuerza laboral de Suburbia para cubrir todas
+                <span className="text-2xl font-bold text-pink-700">1.5 veces</span> toda la fuerza laboral de Suburbia para cubrir todas
                 sus posiciones.
               </p>
             </blockquote>
@@ -79,7 +79,7 @@ export default function Datos() {
         </div>
         <div className="pt-14 mx-auto">
           <h1 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white"> ¿Tú o tu equipo son propensos a renunciar?</h1>  
-          <p className="px-20 flex justify-center items-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
+          <p className="px-20 flex justify-center items-center text-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
             Dentro de las tres tiendas antes mencionadas la baja de personal no
             es igual en todos los puestos, existen algunos con más riesgo.
           </p >
@@ -93,7 +93,7 @@ export default function Datos() {
         <div className="grid mb-8 lg:mb-12 lg:grid-cols-3">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
+              <h3 className="text-lg font-bold text-pink-900 dark:text-white">
                 LIVERPOOL
               </h3>
               <p className="my-4">
@@ -113,12 +113,12 @@ export default function Datos() {
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
+              <h3 className="text-lg font-bold text-pink-900 dark:text-white">
                 CEDIS
               </h3>
               <p className="my-4">
-                Recepción es el segundo puesto con más población, pero necesitas
-                contratar 5 personas para cubrir 1 posición.
+                <span className="font-bold text-pink-700 text-xl">Recepción</span> es el segundo puesto con más población, pero necesitas
+                contratar <span className="font-bold text-pink-700 text-xl">5</span> personas para cubrir <span className="font-bold text-pink-700 text-xl">1</span> posición.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
@@ -133,12 +133,12 @@ export default function Datos() {
           </figure>
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-pink-900 dark:text-white">
+              <h3 className="text-lg font-bold text-pink-900 dark:text-white">
                 SUBURBIA
               </h3>
               <p className="my-4">
-                Cajero es el segundo puesto con más población, pero necesitas
-                contratar 3 personas para cubrir 1 posición.
+                <span className="font-bold text-pink-700 text-xl">Cajero</span> es el segundo puesto con más población, pero necesitas
+                contratar <span className="font-bold text-pink-700 text-xl">3</span> personas para cubrir <span className="font-bold text-pink-700 text-xl">1</span> posición.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
