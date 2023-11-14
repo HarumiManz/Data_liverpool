@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import Tabla from "@/components/Herramienta/Tabla";
 import { Machine } from "@/components/Herramienta";
 import { Archivo } from "@/components/Herramienta";
-import {Dashboard} from "@/components/Herramienta";
-
+import { Dashboard } from "@/components/Herramienta";
 
 export default function Herramienta() {
   return (
@@ -12,7 +11,9 @@ export default function Herramienta() {
       <Machine />
       <Archivo />
       <Tabla />
-      <Dashboard/>
+      <div>
+        <Dashboard />
+      </div>
     </>
   );
 }

@@ -37,10 +37,10 @@ export default function Pay() {
     <div className=" bg-white">
       <header className="bg-white shadow-xl rounded-md p-5 h-full">
         <div className="w-full h-full grid place-items-center">
-        <h1 className="text-2xl text-center justify-center font-bold">
+          <h1 className="text-2xl text-center justify-center font-bold">
             Grafica de pastel
           </h1>
-          <Pie data={data}  />
+          <Pie data={data} />
         </div>
       </header>
     </div>

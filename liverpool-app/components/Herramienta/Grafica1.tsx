@@ -49,9 +49,9 @@ export default function Grafica1() {
       <div className=" bg-white ">
         <header className=" bg-white border-gray-100 shadow-xl rounded-md p-5">
           <div>
-          <h1 className="text-2xl text-center justify-center font-bold">
-            Grafica de barras 
-          </h1>
+            <h1 className="text-2xl text-center justify-center font-bold">
+              Grafica de barras
+            </h1>
             <Bar data={data} options={options}></Bar>
           </div>
         </header>

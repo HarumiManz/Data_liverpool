@@ -1,45 +1,42 @@
-'use client';
+"use client";
 
-  import {
-    Chart as ChartJS,
-    PointElement,
-    LinearScale,
-    Tooltip,
-    Legend
-  } from 'chart.js';
-  import { Scatter } from 'react-chartjs-2';
-  import { faker } from '@faker-js/faker';
+import {
+  Chart as ChartJS,
+  PointElement,
+  LinearScale,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Scatter } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 
-  ChartJS.register(
-    PointElement,
-    LinearScale,
-    Tooltip,
-    Legend
-  )
+ChartJS.register(PointElement, LinearScale, Tooltip, Legend);
 
-  export default function Dispersion() {
-    const data = {
-      datasets: [
-        {
-            label: 'A dataset',
-            data: Array.from({ length: 100 }, () => ({
-              x: faker.number.int({ min: -100, max: 100 }),
-              y: faker.number.int({ min: -100, max: 100 }),
-            })),
-            backgroundColor: 'rgba(255, 99, 132, 1)',
-        }
-      ]
-    }
-    const options = {}
+export default function Dispersion() {
+  const data = {
+    datasets: [
+      {
+        label: "A dataset",
+        data: Array.from({ length: 100 }, () => ({
+          x: faker.number.int({ min: -100, max: 100 }),
+          y: faker.number.int({ min: -100, max: 100 }),
+        })),
+        backgroundColor: "#8F006A",
+      },
+    ],
+  };
+  const options = {};
 
-    return (
-        <header className="bg-white shadow">
-            <div>
-                <Scatter
-                data = {data}
-                options = {options}
-                ></Scatter>
-            </div>
-        </header>
-    );
-  }
+  return (
+    <div className="">
+      <header className="bg-white shadow-xl rounded-md p-5">
+        <div>
+          <h1 className="text-2xl text-center justify-center font-bold">
+            Grafica de dispersión
+          </h1>
+          <Scatter data={data} options={options}></Scatter>
+        </div>
+      </header>
+    </div>
+  );
+}
