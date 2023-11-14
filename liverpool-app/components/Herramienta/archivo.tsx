@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 
 export default function Archivo() {
   const [file, setFile] = useState<File | null>(null);
@@ -13,7 +12,8 @@ export default function Archivo() {
       try {
         const form = new FormData();
         form.append("file", file);
-        const response = await fetch("http://10.48.108.34:5000/upload", {
+        //cambiar url siempre que se corra el server.py
+        const response = await fetch("http://10.48.111.223:5000/upload", {
           method: "POST",
           body: form,
         });
@@ -63,7 +63,7 @@ export default function Archivo() {
                 </button>
               </div>
 
-              <div>
+              <div className="px-10 text-center">
                 {fileResponse
                   ? fileResponse.message + " lineas : " + fileResponse.lines
                   : "No se ha subido archivo"}
@@ -80,9 +80,7 @@ export default function Archivo() {
               el resultado de tu predicción
             </h1>
             <div className=" rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
-              <h3 className="py-5 px-3">
-                Nuevo excel
-              </h3>
+              <h3 className="py-5 px-3">Nuevo excel</h3>
               <div className="px-8 flex justify-center items-center">
                 <button className=" py-2.5 px-10 mr-2 mb-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-pink-700 focus:z-10 focus:ring-4 focus:ring-pink-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-pink-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-pink-700">
                   Descargar

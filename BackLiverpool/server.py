@@ -25,12 +25,24 @@ def upload():
 
     with open(f"./temp/{file_name}.csv", "w") as f:
         f.writelines(lines)
-
-  
-    return (
+        
+    try :
+        
+        temp_reader = Reader("mongodb://localhost:27017/", "LiverpoolTestBack")
+        with open(f'./temp/{file_name}.csv', "r") as f:
+            dict_reader = csv.DictReader(f)
+            line = 1
+            for row in dict_reader:
+                temp_reader.read_row(row)
+                line += 1
+        temp_reader.push_to_db(str(file_name))
+        os.remove(f'./temp/{file_name}.csv')
+        del temp_reader
+        
+        return (
             jsonify(
                 {
-                    "message": "File saved successfully!",
+                    "message": "archivo cargado",
                     "lines": len(lines) - 1,
                     "attributes": headers,
                     "id": file_name,
@@ -39,26 +51,24 @@ def upload():
             ),
             200,
         )
-    
-@app.route("/start-processing", methods=["POST"])
-def handle_start_processing():
-    try :
-        fileId = request.form.get("fileId")
-        print("Data", fileId)
-        temp_reader = Reader("mongodb://localhost:27017/", "LiverpoolTestBack")
-        with open(f'./temp/{fileId}.csv', "r") as f:
-            dict_reader = csv.DictReader(f)
-            line = 1
-            for row in dict_reader:
-                temp_reader.read_row(row)
-                line += 1
-        temp_reader.push_to_db("Archivo")
-        os.remove(f'./temp/{fileId}.csv')
-        del temp_reader
-        return jsonify({"message" : "scucces"}), 200
-    except Exception as err:
+        
+         
+        
+    except Exception as err :
         print(err)
-        return jsonify({"message" : "error"}), 500
+        return (
+            jsonify(
+                {
+                    "message": "error al cargar archivo",
+                    "lines": 0,
+                    "attributes": None,
+                    "id": file_name,
+                    "error": True,
+                }
+            ),
+            500,
+        )
+        
     
 @app.route("/getAllDocuments")
 def getAllDocuments():
