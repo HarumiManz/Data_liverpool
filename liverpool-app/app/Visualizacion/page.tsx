@@ -1,5 +1,7 @@
 import { Barra, Dispersion, BarraDoble, Pay, Lineal, Calor } from '@/components/Visualizacion';
 
+import Image from "next/image";
+
 export default function Visualizacion() {
     return (
         <header className="bg-white shadow">
@@ -16,6 +18,13 @@ export default function Visualizacion() {
               <Calor/>
             </div>
           </div>
+          <Image
+        src="/images/bolo1.png"
+        alt="analitica "
+        width={300}
+        height={300}
+        className="px-10"
+      />
         </header>
       );
 }

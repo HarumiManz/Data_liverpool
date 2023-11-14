@@ -2,58 +2,60 @@ import Image from "next/image";
 
 export default function Inicio() {
   return (
-    <section id='inicio'>
-      <div className="bg-white">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-10 sm:px-6 sm:py-20 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <section id="inicio">
+      <div className="bg-white py-10">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-5 sm:px-6 sm:py-10 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-700 sm:text-4xl">
-              Adéntrate en Nuestra Página Web{" "}
+            <h2 className="text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl">
+              Súmate al cambio ¡Cuidemos nuestro talento!
             </h2>
 
-            <p className="mt-4 text-gray-700">
-              Conoce y navega por nuestra página web, hecha con el fin de
-              facilitar el analisis de datos y predicción de renuncias de la
-              empresa Liverpool. Navega por cada una de nuestras pestañas y
-              descubre todos los beneficios de nuestro sistema
+            <p className="mt-4 font-light text-xl text-gray-700">
+              Esta plataforma esta creada especialmente para ti, navega a través
+              de las diferentes secciones para conocer y prevenir la rotación de
+              empleados a tu cargo, conocer el contexto de tu entorno laboral y
+              crear estrategias con ayuda de la inteligencia artificial.
             </p>
 
             <dl className="mt-10 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2 sm:gap-y-10 lg:gap-x-8">
               <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Inicio</dt>
-                <dd className="mt-2 text-sm text-gray-600">
+                <dt className="font-medium text-pink-900">Inicio</dt>
+                <dd className="mt-2 font-light text-sm text-gray-600">
                   {" "}
-                  Conocenos que hacemos como ingenieros en analitica de datos y
-                  el proceso que llevamos a cabo para la preparacion de datos.
+                  Te invitamos a conocer el objetivo de nuestra plataforma y
+                  sumarte a formar parte del cambio.
                 </dd>
               </div>
               <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Pasos</dt>
-                <dd className="mt-2 text-sm text-gray-600">
-                  Nosotros te proporcionamos un manual de los pasos a seguir
-                  para poder usar nuestra herramienta de predicción, con el fin
-                  que tu experiencia sea de las mejores.
+                <dt className="font-medium text-pink-900">Pasos</dt>
+                <dd className="mt-2 font-light text-sm text-gray-600">
+                  Te ayudamos a tener la mejor experiencia dentro de la
+                  plataforma, guiándote paso a paso para obtener la mejor
+                  experiencia posible.
                 </dd>
               </div>
               <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Herramienta</dt>
-                <dd className="mt-2 text-sm text-gray-600">
-                  Usa nuestra herrmienta de prediccion de renuncias de
-                  liverpool, donde con nuestro modelo facil y rapido de usar.
+                <dt className="font-medium text-pink-900">Herramienta</dt>
+                <dd className="mt-2 font-light text-sm text-gray-600">
+                  Sube el excel que generaste siguiendo el paso a paso de la
+                  plataforma y con un solo click recibe las posibles renuncias
+                  del grupo a evaluar.
                 </dd>
               </div>
               <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Visualización </dt>
-                <dd className="mt-2 text-sm text-gray-600">
-                  Para ayudarte a hacer un mejor analisis descriptivo te
-                  proporcionamos visualizaciones de diferentes tipos con tus
-                  datos ingresados en la herramienta.
+                <dt className="font-medium text-pink-900">Visualización </dt>
+                <dd className="mt-2 font-light text-sm text-gray-600">
+                  Conoce el contexto al que estarás expuesto mediante el
+                  análisis visual de los datos obtenidos a partir de las
+                  predicciones generadas.
                 </dd>
               </div>
               <div className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">Chat </dt>
-                <dd className="mt-2 text-sm text-gray-600">
-                  No dudes en hacer tus preguntas en el chat, en donde podras
-                  completar tu experiencia.{" "}
+                <dt className="font-medium text-pink-900">Chat </dt>
+                <dd className="mt-2 font-light text-sm text-gray-600">
+                  Aprovecha el plus de la plataforma y utiliza el Chat de IA
+                  para generar estrategias de retención de empleados basadas en
+                  tus propias necesidades.
                 </dd>
               </div>
             </dl>
