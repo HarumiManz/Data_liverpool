@@ -10,7 +10,7 @@ export default function Datos() {
           </h2>
           <p className="pb-5 px-20 flex justify-center items-center text-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
             Grupo Puerto Liverpool cuenta con aproximadamente una población de
-            73,330 colaboradores los cuales se ubican principalmente en
+            73,330 colaboradores los cuales se ubican principalmente en 
             Suburbia, CeDis y Liverpool pero debido a la rotación de empleados
             que han experimentado de 2019-2023 han tenido que contratar…
           </p>
@@ -78,7 +78,7 @@ export default function Datos() {
           </figure>
         </div>
         <div className="pt-14 mx-auto">
-          <h1 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white"> ¿Tu o tu equipo son propensos a renunciar?</h1>  
+          <h1 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white"> ¿Tú o tu equipo son propensos a renunciar?</h1>  
           <p className="px-20 flex justify-center items-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
             Dentro de las tres tiendas antes mencionadas la baja de personal no
             es igual en todos los puestos, existen algunos con más riesgo.
@@ -97,7 +97,7 @@ export default function Datos() {
                 LIVERPOOL
               </h3>
               <p className="my-4">
-                Cajero es el cuarto puesto con myor población, pero necesitas
+                Cajero es el cuarto puesto con mayor población, pero necesitas
                 1.2 personas para cubrir 1 posición.
               </p>
             </blockquote>
