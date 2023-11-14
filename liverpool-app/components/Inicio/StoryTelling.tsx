@@ -9,7 +9,7 @@ export default function StoryTelling() {
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white">
               ¿Sabías qué?
             </h2>
-            <p className="mb-4">
+            <p className="mb-2 text-base text-xl ">
               Mediante un estudio realizado por OCCMundial, junto con las
               consultoras GDP y Grupo Azimuth, se descubrió que en{" "}
               <span className="text-2xl font-bold text-pink-700">México 4 de cada 10</span> mexicanos
@@ -20,6 +20,7 @@ export default function StoryTelling() {
               <span className="text-2xl font-bold text-pink-700"> 600 </span>veces el{" "}
               <span className="text-2xl font-bold text-pink-700">Estadio Azteca.</span>
             </p>
+            <p className="text-m text-right font-bold text-pink-700">- Forbes México </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8">
             <Image
