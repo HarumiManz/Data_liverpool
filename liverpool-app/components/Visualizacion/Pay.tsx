@@ -1,52 +1,48 @@
-'use client';
+"use client";
 
-import { 
-    Chart as ChartJS, 
-    ArcElement, 
-    Tooltip, 
-    Legend 
-    } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
 
-ChartJS.register(
-    ArcElement, 
-    Tooltip, 
-    Legend
-    );
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Pay() {
-    const data = {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [
-          {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-            ],
-            borderWidth: 1,
-          },
+  const data = {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          "#7C005C",
+          "#901238",
+          "#AF007E",
+          "#C04E91",
+          "#D997C2",
+          "#E8C9DE",
         ],
-      };
+        borderColor: [
+          "#7C005C",
+          "#901238",
+          "#AF007E",
+          "#C04E91",
+          "#D997C2",
+          "#E8C9DE",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
-      return (
-        <header className="bg-white shadow">
-            <div className='h-40 w-40'>
-                <Pie data={data} />
-            </div>
-        </header>
-      )
+  return (
+    <div className=" bg-white">
+      <header className="bg-white shadow-xl rounded-md p-5 h-full">
+        <div className="w-full h-full grid place-items-center">
+          <h1 className="text-2xl text-center justify-center font-bold">
+            Grafica de pastel
+          </h1>
+          <Pie data={data} />
+        </div>
+      </header>
+    </div>
+  );
 }
