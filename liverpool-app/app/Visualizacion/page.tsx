@@ -1,4 +1,4 @@
-import { Barra, Dispersion, BarraDoble, Pay, Lineal } from '@/components/Visualizacion';
+import { Barra, Dispersion, BarraDoble, Pay, Lineal, Calor } from '@/components/Visualizacion';
 
 export default function Visualizacion() {
     return (
@@ -13,6 +13,7 @@ export default function Visualizacion() {
               <BarraDoble/>
               <Pay/>
               <Lineal/>
+              <Calor/>
             </div>
           </div>
         </header>
