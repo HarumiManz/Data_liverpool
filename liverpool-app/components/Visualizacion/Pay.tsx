@@ -44,7 +44,7 @@ export default function Pay() {
 
       return (
         <header className="bg-white shadow">
-            <div>
+            <div className='h-40 w-40'>
                 <Pie data={data} />
             </div>
         </header>

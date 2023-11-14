@@ -34,19 +34,19 @@ export default function Archivo() {
     <>
       <div className="bg-white px-20 py-20">
         <div>
-          <h1 className=" text-3xl font-bold tracking-tight text-purple-900">
+          <h1 className=" text-3xl font-bold tracking-tight text-pink-900">
             Herramienta de predicción
           </h1>
         </div>
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2">
-          <div className=" bg-purple-100 shadow-md rounded-md p-10 m-5">
-            <h1 className="text-2xl font-medium text-purple-950">
+          <div className=" bg-pink-50 shadow-md rounded-md p-10 m-5">
+            <h1 className="text-2xl font-medium text-pink-950">
               Cargar Archivo
             </h1>
             <p className="text-xl font-light text-gray-800 pt-3">
               Solo archivos .xlsx con menos de 1 Gb
             </p>
-            <div className="rounded-md border-dashed border-purple-500 border-2 p-2 m-5">
+            <div className="rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
               <input
                 type="file"
                 accept=".csv,.xls"
@@ -70,8 +70,8 @@ export default function Archivo() {
               </div>
             </div>
           </div>
-          <div className=" bg-purple-100 shadow-md rounded-md p-10 m-5">
-            <h2 className="text-2xl font-medium text-purple-950">
+          <div className=" bg-pink-50 shadow-md rounded-md p-10 m-5">
+            <h2 className="text-2xl font-medium text-pink-900">
               Descarga tu nuevo Excel
             </h2>
             <h1 className="text-xl font-light text-gray-800 pt-3">
@@ -79,7 +79,7 @@ export default function Archivo() {
               Puedes Descargar tu nuevo excel con la nueva columna agregada con
               el resultado de tu predicción
             </h1>
-            <div className=" rounded-md border-dashed border-purple-500 border-2 p-2 m-5">
+            <div className=" rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
               <h3 className="py-5 px-3">
                 Nuevo excel
               </h3>

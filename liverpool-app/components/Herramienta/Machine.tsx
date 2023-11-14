@@ -5,7 +5,7 @@ export default function Machine() {
     <>
       <section
         id="Machine"
-        className="bg-gradient-to-r from-purple-300 via-white to-white"
+        className="bg-gradient-to-r from-pink-300 via-white to-white"
       >
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <Image
@@ -16,7 +16,7 @@ export default function Machine() {
             className="px-10 rounded-full"
           />
           <div className="mt-4 md:mt-0">
-            <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-purple-950 dark:text-white">
+            <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-pink-900 dark:text-white">
             ¡Anticípate a la rotación laboral y fortalece a tu equipo!
 
             </h2>
