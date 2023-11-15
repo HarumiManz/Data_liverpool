@@ -13,7 +13,7 @@ export default function Archivo() {
         const form = new FormData();
         form.append("file", file);
         //cambiar url siempre que se corra el server.py
-        const response = await fetch("http://10.48.111.223:5000/upload", {
+        const response = await fetch("http://10.48.98.103:5000/upload", {
           method: "POST",
           body: form,
         });

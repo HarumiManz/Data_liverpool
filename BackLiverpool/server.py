@@ -4,9 +4,18 @@ from uuid import uuid4
 import csv
 from database import Reader
 import os
+import joblib
+from joblib import load 
+from pymongo import MongoClient
+
+#pip install catboost 
+#pip install joblib 
+
 
 app = Flask("Back Liverpool")
 CORS(app)
+loaded_model = joblib.load('modelo_Catboost.pkl') 
+
 
 @app.route("/upload", methods=["POST"])
 def upload():
@@ -80,7 +89,23 @@ def getAllDocuments():
         print(err)
         return jsonify({"message" : "error"}), 500
     
+@app.route("/getLatestDocument")
+def getLatestDocument():
+    try:
+        # Establecer conexión con MongoDB
+        client = MongoClient("mongodb://localhost:27017/")
+        db = client["LiverpoolTestBack"]
+        collection = db["Archivo"]
+
+        # Ordenar los documentos por fecha en orden descendente y obtener el primero (el último ingresado)
+        latest_document = collection.find_one({}, sort=[("fecha", -1)])  # Reemplaza "fecha" con el nombre de tu campo de fecha
+
+        return jsonify({"message": "success", "data": latest_document})
     
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)
