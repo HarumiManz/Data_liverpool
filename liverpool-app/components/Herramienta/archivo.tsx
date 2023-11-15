@@ -39,7 +39,7 @@ export default function Archivo() {
           </h1>
         </div>
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2">
-          <div className=" bg-pink-50 shadow-md rounded-md p-10 m-5">
+          <div className=" bg-pink-50 shadow-xl rounded-md p-10 m-5">
             <h1 className="text-2xl font-medium text-pink-950">
               Cargar Archivo
             </h1>
@@ -59,18 +59,18 @@ export default function Archivo() {
                   onClick={handleSubmitFile}
                   className="py-2.5 px-10 mr-2 mb-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-pink-700 focus:z-10 focus:ring-4 focus:ring-pink-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-pink-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-pink-700"
                 >
-                  Subir Archivo
+                  Procesar archivo
                 </button>
               </div>
 
               <div className="px-10 text-center">
                 {fileResponse
                   ? fileResponse.message + " lineas : " + fileResponse.lines
-                  : "No se ha subido archivo"}
+                  : "No se ha procesado "}
               </div>
             </div>
           </div>
-          <div className=" bg-pink-50 shadow-md rounded-md p-10 m-5">
+          <div className=" bg-pink-50 shadow-xl rounded-md p-10 m-5">
             <h2 className="text-2xl font-medium text-pink-900">
               Descarga tu nuevo Excel
             </h2>
