@@ -4,22 +4,17 @@ import Image from "next/image";
 export default function DashBoard() {
   return (
     <>
-      <div className="py-10 px-20  bg-white">
-        <h1 className=" text-3xl font-bold tracking-tight text-pink-800">
-          ¡ ve un analisis descriptivo !
-        </h1>
-        <p className="pt-5 font-light text-gray-700 md:text-lg">
-          {" "}
-          Con base a tus datos de prediccion podras hacer un analisis
-          descriptivo mas visual{" "}
-        </p>
-        <Image
-          src="/images/bolo1.png"
-          alt="analitica "
-          width={300}
-          height={300}
-          className="px-10"
-        />
+      <div className="py-10 px-20 bg-white ">
+        <div>
+          <h1 className="items-center justify-center content-center text-center text-4xl font-bold tracking-tight text-pink-800">
+            ¡Visualiza un analisis descriptivo !
+          </h1>
+          <p className="pt-5 font-light text-gray-700 md:text-lg text-center">
+            {" "}
+            Con base a tus datos de prediccion podras hacer un analisis
+            descriptivo mas visual{" "}
+          </p>
+        </div>
       </div>
       <div className="px-10 py-5 bg-white flex flex-row gap-4">
         <div className="basis-2/3">
