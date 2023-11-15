@@ -1,4 +1,4 @@
-import { Barra, BarraDoble, Dispersion, Lineal, Pay } from ".";
+import { Barra, BarraDoble, Dispersion, Lineal, Pay, Calor } from ".";
 import Image from "next/image";
 
 export default function DashBoard() {
@@ -32,8 +32,13 @@ export default function DashBoard() {
           <Barra />
         </div>
       </div>
-      <div className="py-5 px-40  bg-white">
-        <Lineal />
+      <div className="py-5 px-10 bg-white grid grid-cols-2 md:grid-cols-2 gap-4">
+        <div className="grid gap-4">
+          <Lineal />
+        </div>
+        <div>
+          <Calor />
+        </div>
       </div>
     </>
   );

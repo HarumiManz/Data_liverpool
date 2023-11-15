@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chartjs-chart-treemap": "^2.3.0",
     "faker": "^6.6.6",
     "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
