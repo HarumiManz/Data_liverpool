@@ -57,42 +57,42 @@ export default function Tabla() {
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900  dark:text-white"
                 >
-                  Microsoft Surface Pro
+                  Galerias Tampico 
                 </th>
-                <td className="px-6 py-4">White</td>
-                <td className="px-6 py-4">Laptop PC</td>
-                <td className="px-6 py-4">$1999</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
+                <td className="px-6 py-4">Suburbia</td>
+                <td className="px-6 py-4">30</td>
+                <td className="px-6 py-4">Gerente</td>
+                <td className="px-6 py-4">1</td>
+                <td className="px-6 py-4">2</td>
+                <td className="px-6 py-4">Renuncia</td>
               </tr>
               <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900  dark:text-white"
                 >
-                  Magic Mouse 2
+                  Sonora
                 </th>
-                <td className="px-6 py-4">Black</td>
-                <td className="px-6 py-4">Accessories</td>
-                <td className="px-6 py-4">$99</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
+                <td className="px-6 py-4">Cedis</td>
+                <td className="px-6 py-4">45</td>
+                <td className="px-6 py-4">Cajera</td>
+                <td className="px-6 py-4">0</td>
+                <td className="px-6 py-4">3</td>
+                <td className="px-6 py-4">Renuncia</td>
               </tr>
               <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900  dark:text-white"
                 >
-                  Google Pixel Phone
+                  Tijuana
                 </th>
-                <td className="px-6 py-4">Gray</td>
-                <td className="px-6 py-4">Phone</td>
-                <td className="px-6 py-4">$799</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
+                <td className="px-6 py-4">Suburbia</td>
+                <td className="px-6 py-4">18</td>
+                <td className="px-6 py-4">cajera</td>
+                <td className="px-6 py-4">0</td>
+                <td className="px-6 py-4">0</td>
+                <td className="px-6 py-4">Renuncia</td>
               </tr>
 
               <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
@@ -100,14 +100,14 @@ export default function Tabla() {
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900  dark:text-white"
                 >
-                  Apple MacBook Pro 17"
+                  Tuxpan Veracruz 
                 </th>
-                <td className="px-6 py-4">Silver</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4">$2999</td>
+                <td className="px-6 py-4">Liverpool</td>
+                <td className="px-6 py-4">50</td>
+                <td className="px-6 py-4">cajera</td>
+                <td className="px-6 py-4">5</td>
+                <td className="px-6 py-4">0</td>
+                <td className="px-6 py-4">renuncia</td>
               </tr>
             </tbody>
           </table>
