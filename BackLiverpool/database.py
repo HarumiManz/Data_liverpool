@@ -29,3 +29,5 @@ class Reader:
             document["_id"] = str(document["_id"])
             res.append(document)
         return res
+    
+        

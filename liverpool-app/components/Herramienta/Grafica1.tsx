@@ -17,7 +17,7 @@ import { faker } from "@faker-js/faker";
 // Estos valores se declaran previamente para ser usados luego
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-export default function Barra() {
+export default function Grafica1() {
   const labels = ["Sun", "Mon", "Tue"];
   /* Se declaran las constantes "data" y "options" 
   (options puede estar vació). En "data" se declaran los
@@ -31,7 +31,7 @@ export default function Barra() {
         label: "398",
         data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
         backgroundColor: "#C35293",
-        borderColor: "black",
+        borderColor: "pink",
         borderWidth: 1,
       },
     ],

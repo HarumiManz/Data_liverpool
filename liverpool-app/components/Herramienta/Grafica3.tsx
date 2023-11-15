@@ -12,7 +12,7 @@ import { faker } from "@faker-js/faker";
 
 ChartJS.register(PointElement, LinearScale, Tooltip, Legend);
 
-export default function Dispersion() {
+export default function Grafica3() {
   const data = {
     datasets: [
       {
@@ -32,7 +32,7 @@ export default function Dispersion() {
       <header className="bg-white shadow-xl rounded-md p-5">
         <div>
           <h1 className="text-2xl text-center justify-center font-bold">
-            Grafica de dispersión
+            Grafica de dispersión 
           </h1>
           <Scatter data={data} options={options}></Scatter>
         </div>

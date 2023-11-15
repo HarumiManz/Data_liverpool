@@ -23,7 +23,7 @@ ChartJS.register(
   Legend
 );
 
-export default function Lineal() {
+export default function Grafica5() {
   const labels = [
     "January",
     "February",

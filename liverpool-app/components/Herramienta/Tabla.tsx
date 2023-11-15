@@ -2,17 +2,17 @@ export default function Tabla() {
   return (
     <>
       <div className="pb-10 px-20 bg-white">
-        <h1 className="text-3xl font-bold tracking-tight text-purple-900">
+        <h1 className="text-3xl font-bold tracking-tight text-pink-800">
           Tabla con los datos 
         </h1>
-        <h1>
+        <h1 className="pt-5 font-light text-gray-700 md:text-lg">
           Visualiza una muestra de tu nuevo excel con los resultados de la predicción. 
         </h1>
       </div>
       <div className="pb-20 px-20 bg-white">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-purple-900 uppercase bg-purple-100 dark:bg-purple-700 dark:text-gray-600">
+            <thead className="text-xs text-pink-900 uppercase bg-pink-50 dark:bg-pink-700 dark:text-gray-600">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Ubicación

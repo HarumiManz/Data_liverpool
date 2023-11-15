@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-export default function BarraDoble() {
+export default function Grafica2() {
   const labels = [
     "January",
     "February",
