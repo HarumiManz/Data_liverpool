@@ -12,7 +12,7 @@ export default function StoryTelling() {
             <p className="mb-2 text-base text-xl ">
               Mediante un estudio realizado por OCCMundial, junto con las
               consultoras GDP y Grupo Azimuth, se descubrió que en{" "}
-              <span className="text-2xl font-bold text-pink-700">México 4 de cada 10</span> mexicanos
+              <span className="text-2xl font-bold text-pink-700">México 4 de cada 10</span> empleados
               estarían dispuestos a <span className="text-2xl font-bold text-pink-700">renunciar</span>{" "}
               a su actual puesto laboral en los
               <span className="text-2xl font-bold text-pink-700">próximos 6 meses</span>, lo que
