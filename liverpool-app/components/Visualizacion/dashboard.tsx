@@ -49,7 +49,6 @@ export default function DashBoard() {
           <Calor />
         </div>
       </div>
-
     </>
   );
 }

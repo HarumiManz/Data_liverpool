@@ -4,12 +4,13 @@ export default function Galeria() {
   return (
     <>
       <header className="bg-white shadow">
-        <div className="flex justify-center items-center mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-pink-700 ">
+        <div className="text-left mx-auto max-w-7xl px-20 pt-10 sm:px-6 lg:px-8">
+          <h1 className=" max-w-2xl mb-4 text-2xl font-bold tracking-tight sm:text-4xl leading-none md:text-4xl xl:text-2xl text-pink-900 ">
             ¡VIVE LA MEJOR EXPERIENCIA!
           </h1>
-          <h2 className="text-2xl font-light text-gray-800 md:text-lg lg:text-xl py-3 px-5">Te guiamos paso a paso en el uso de la herramienta</h2>
         </div>
+        <p className=" text-2xl font-light text-gray-800 md:text-lg lg:text-xl py-3 px-8">Te guiamos paso a paso en el uso de la herramienta</p>
+
       </header>
       <div className="px-20 py-10 bg-white">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

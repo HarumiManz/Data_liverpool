@@ -97,8 +97,8 @@ export default function Datos() {
                 LIVERPOOL
               </h3>
               <p className="my-4">
-                Cajero es el cuarto puesto con mayor población, pero necesitas
-                1.2 personas para cubrir 1 posición.
+              <span className="font-bold text-pink-700 text-xl">Cajero </span> es el cuarto puesto con mayor población, pero necesitas
+              <span className="font-bold text-pink-700 text-xl">1.2</span> personas para cubrir <span className="font-bold text-pink-700 text-xl">1</span> posición.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
