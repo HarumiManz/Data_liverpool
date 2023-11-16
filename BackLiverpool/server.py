@@ -108,6 +108,7 @@ def upload():
         )
 
     except Exception as err:
+        print(err)
         return (
             jsonify(
                 {"message": "an error ocurred when upoading to mongo", "error": True}

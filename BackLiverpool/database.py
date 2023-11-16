@@ -21,6 +21,11 @@ class Reader:
 
         print(f"{len(self.knowledge)} rows inserted in NO SQL DB")
         
+    def drop_collection(self, collectionName):
+        collection = self.db[collectionName]
+        collection.drop()
+        print("Se borro coleccion")
+        
     def get_docs(self, collectionName):
         collection = self.db[collectionName]
         documents = collection.find({})
