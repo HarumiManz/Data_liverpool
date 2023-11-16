@@ -10,8 +10,7 @@ from pymongo import MongoClient
 
 #pip install catboost 
 #pip install joblib 
-
-
+q
 app = Flask("Back Liverpool")
 CORS(app)
 loaded_model = joblib.load('modelo_Catboost.pkl') 
