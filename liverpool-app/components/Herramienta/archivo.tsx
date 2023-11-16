@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function Archivo() {
   const [file, setFile] = useState<File | null>(null);
@@ -13,7 +14,7 @@ export default function Archivo() {
         const form = new FormData();
         form.append("file", file);
         //cambiar url siempre que se corra el server.py
-        const response = await fetch("http://10.48.98.103:5000/upload", {
+        const response = await fetch("http://10.48.99.20:8082/upload", {
           method: "POST",
           body: form,
         });
@@ -80,7 +81,14 @@ export default function Archivo() {
               el resultado de tu predicción
             </h1>
             <div className=" rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
-              <h3 className="py-5 px-3">Nuevo excel</h3>
+              <h3 className="py-5 px-3">Excel con predicción</h3>
+              <Image
+                className="max-w-full  "
+                src="/images/excel.png"
+                alt="Logo tec "
+                width={50}
+                height={50}
+              />
               <div className="px-8 flex justify-center items-center">
                 <button className=" py-2.5 px-10 mr-2 mb-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-pink-700 focus:z-10 focus:ring-4 focus:ring-pink-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-pink-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-pink-700">
                   Descargar
