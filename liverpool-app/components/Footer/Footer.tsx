@@ -11,22 +11,22 @@ export default function Footer() {
             <div className="mb-6 md:mb-0 flex items-center justify-center text-center">
               <ul>
                 <Image
-                  className="flex items-center justify-center"
+                  className="mb-6 flex items-center justify-center"
                   src="/images/logoItesm.png"
                   alt="Logo tec "
                   width={200}
                   height={200}
                 />
-                <span className=" py-10 text-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                <span className=" py-10 text-center text-m font-bold whitespace-nowrap dark:text-white">
                   ITESM
                 </span>
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white text-center">
                 Institución
               </h3>
-              <ul className="text-gray-600 hover:underline dark:text-gray-400">
+              <ul className="text-gray-600 hover:underline dark:text-gray-400 text-center">
                 <li className="mb-4">
                   <p>
                     Instituto Tecnológico de Estudios Superiores de Monterrey{" "}
@@ -41,15 +41,15 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white text-center">
                 Alumnos
               </h3>
-              <ul className="text-gray-600 hover:underline dark:text-gray-400">
+              <ul className="text-center text-gray-600 hover:underline dark:text-gray-400">
                 <li className="mb-4">
                   <p>Harumi Manzano </p>
                 </li>
                 <li className="mb-4">
-                  <p>Diego Corona</p>
+                  <p>Jorge Rojas</p>
                 </li>
                 <li className="mb-4">
                   <p>Ana Rubio</p>
@@ -58,45 +58,41 @@ export default function Footer() {
                   <p>Jaqueline Romero</p>
                 </li>
                 <li className="mb-4">
-                  <p>Jorge Rojas </p>
+                  <p>Diego Corona</p>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 className=" text-center mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Profesores
               </h3>
-              <ul className="text-gray-600 hover:underline dark:text-gray-400">
+              <ul className="text-gray-600 hover:underline dark:text-gray-400 text-center">
                 <li className="mb-4">
-                  <p>Ma. del Carmen</p>
+                  <p>Ma.Carmen Jiménez</p>
                 </li>
                 <li className="mb-4">
                   <p>Julio Arriaga</p>
                 </li>
                 <li className="mb-4">
-                  <p>Gabriela</p>
+                  <p>Gabriela Campos</p>
                 </li>
                 <li className="mb-4">
-                  <p>Aram </p>
+                  <p>Aram Baruch González</p>
                 </li>
                 <li className="mb-4">
-                  <p>Jose </p>
+                  <p>Jose Eslava</p>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white text-center">
                 Socio Formador
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a
-                    href="#"
-                    target="_blank"
-                    className="text-gray-600 hover:underline dark:text-gray-400"
-                  >
+                  <h3 className="text-gray-600 hover:underline dark:text-gray-400 text-center">
                     Liverpool
-                  </a>
+                    </h3>
                 </li>
               </ul>
             </div>
