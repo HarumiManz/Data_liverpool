@@ -35,4 +35,11 @@ class Reader:
             res.append(document)
         return res
     
+    def getFirstFive(self, collectionName):
+        collection = self.db[collectionName]
+        documents = list(collection.find().limit(5))
+        for document in documents:
+            document['_id'] = str(document['_id']) 
+            print(document)
+        return documents
         
