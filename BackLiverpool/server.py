@@ -8,6 +8,7 @@ from pandas import read_csv, read_excel
 
 # pip install openpyxl
 
+##checar la url con mongo 
 MONGO_URL = "mongodb://localhost:27017"
 
 MOST_HEADERS = [
@@ -126,7 +127,7 @@ def download_file():
     print(file_path)
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
-    return jsonify({"message": "file dosent exists", "error": True}), 400
+    return jsonify({"message": "file doesn't exists", "error": True}), 400
 
 
 @app.route("/getAllDocuments")
