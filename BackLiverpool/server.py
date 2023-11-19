@@ -142,6 +142,20 @@ def getAllDocuments():
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
+    
+@app.route("/getFirstFiveDocuments")
+def get_first_five_documents():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.getFirstFive("Archivo")  
+        return jsonify({"message": "success", "data": data})
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+
 
 
 if __name__ == "__main__":
