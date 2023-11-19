@@ -14,10 +14,37 @@ export default function Galeria() {
       </header>
       <div className="px-20 py-10 bg-white">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div>
+        <div>
             <Image
               className="h-auto max-w-full rounded-lg"
               src="/images/paso1.jpeg"
+              alt="analitica "
+              width={400}
+              height={400}
+            />
+          </div>
+          <div>
+            <Image
+              className="h-auto max-w-full rounded-lg"
+              src="/images/paso9.png"
+              alt="analitica "
+              width={400}
+              height={400}
+            />
+          </div>
+          <div>
+            <Image
+              className="h-auto max-w-full rounded-lg"
+              src="/images/paso8.png"
+              alt="analitica "
+              width={400}
+              height={400}
+            />
+          </div>
+          <div>
+            <Image
+              className="h-auto max-w-full rounded-lg"
+              src="/images/paso7.png"
               alt="analitica "
               width={400}
               height={400}
@@ -68,6 +95,7 @@ export default function Galeria() {
               height={400}
             />
           </div>
+          
         </div>
       </div>
     </>
