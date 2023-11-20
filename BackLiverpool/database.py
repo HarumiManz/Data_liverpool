@@ -42,4 +42,41 @@ class Reader:
             document['_id'] = str(document['_id']) 
             print(document)
         return documents
+    
+    def get5positions(self, collectionName):
+        collection = self.db[collectionName]
         
+        # Utilizando la agregación para obtener los 5 puestos con más renuncias
+        pipeline = [
+            {"$match": {"Estatus": "renuncia"}},  # Filtra solo los documentos con estatus "renuncia"
+            {"$group": {"_id": "$area", "total_resignations": {"$sum": 1}}},
+            {"$sort": {"total_resignations": -1}},
+            {"$limit": 5}
+        ]
+
+        top_positions = list(collection.aggregate(pipeline))
+        return top_positions
+
+    def get_cambios_generacion(self, collectionName):
+        collection = self.db[collectionName]
+
+        pipeline = [
+            {
+                "$group": {
+                    "_id": "$generacion",
+                    "total_cambios_de_puesto": { "$sum": "$cambios de puesto" },
+                    "count": { "$sum": 1 }
+                }
+            },
+            {
+                "$project": {
+                    "_id": 0,
+                    "generacion": "$_id",
+                    "promedio_cambios_de_puesto": { "$divide": ["$total_cambios_de_puesto", "$count"] }
+                }
+            }
+        ]
+
+                
+        cambios_generacion = list(collection.aggregate(pipeline))
+        return cambios_generacion
