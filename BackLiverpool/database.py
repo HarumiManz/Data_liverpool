@@ -61,6 +61,27 @@ class Reader:
         collection = self.db[collectionName]
 
         pipeline = [
+                {
+                    "$group": {
+                    "_id": "$genero",
+                    "promedioAntiguedad": { "$avg": "$antiguedad" }
+                    }
+                },
+                {
+                    "$project": {
+                    "_id": 0,
+                    "genero": "$_id",
+                    "promedioAntiguedad": 1
+                }
+            }
+        ]      
+        cambios_generacion = list(collection.aggregate(pipeline))
+        return cambios_generacion
+        
+    def get_cambios_puesto(self, collectionName):
+        collection = self.db[collectionName]
+
+        pipeline = [
             {
                 "$group": {
                     "_id": "$generacion",
@@ -75,8 +96,33 @@ class Reader:
                     "promedio_cambios_de_puesto": { "$divide": ["$total_cambios_de_puesto", "$count"] }
                 }
             }
-        ]
-
-                
+        ]   
         cambios_generacion = list(collection.aggregate(pipeline))
         return cambios_generacion
+    
+    def get_cambios_antiguedad(self, collectionName): ## falta checarlo Harumi 
+        collection = self.db[collectionName]
+
+        pipeline = [
+            {
+                "$group": {
+                    "_id": "$tienda",
+                    "cambiosPuestoPromedio": { "$avg": "$cambios de puesto" },
+                    "antiguedadPromedio": { "$avg": "$antiguedad" }
+                }
+            },
+            {
+                "$project": {
+                    "_id": 0,
+                    "tienda": "$_id",
+                    "cambiosPuestoPromedio": 1,
+                    "antiguedadPromedio": 1
+                }
+            }
+        ]
+
+        resultado = collection.aggregate(pipeline)
+        return resultado
+
+                
+        

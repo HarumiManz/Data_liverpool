@@ -181,6 +181,32 @@ def cambios_generacion():
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
+    
+@app.route("/getpuesto")
+def cambios_puesto():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_cambios_puesto("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+        
+@app.route("/getcambiosAntiguedad")#falta checarlo Harumi 
+def cambios_antiguedad():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_cambios_antiguedad("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True, port=8082)
