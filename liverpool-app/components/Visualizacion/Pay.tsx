@@ -37,20 +37,18 @@ export default function Pay() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          " http://192.168.68.106:8082/get5positions"
-        );
+        const response = await fetch("http://192.168.68.106:8082/get5positions");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
         // Actualizar el estado del gráfico con los datos obtenidos
         setChartData({
-          labels: data.data.map((item: any) => item._id), // Reemplaza "_id" con el nombre correcto de tu campo
+          labels: data.data.map((item: any ) => item._id),
           datasets: [
             {
-              ...chartData.datasets[0], // Mantén la configuración anterior del dataset
-              data: data.data.map((item: any) => item.total_resignations), // Reemplaza "total_resignations" con el nombre correcto de tu campo
+              ...chartData.datasets[0],
+              data: data.data.map((item: any) => item.total_resignations),
             },
           ],
         });
@@ -58,10 +56,9 @@ export default function Pay() {
         console.error("Error fetching data:", error);
       }
     };
-
+  
     fetchData();
-    // Realizar esta solicitud cada vez que los datos cambien o al montar el componente
-  }, [chartData.datasets]);
+  }, []);
 
   return (
     <div className=" bg-white">
