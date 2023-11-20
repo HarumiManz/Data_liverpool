@@ -155,8 +155,32 @@ def get_first_five_documents():
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-
-
+    
+@app.route("/get5positions")
+def get_5_positions():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get5positions("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+        
+@app.route("/getcambios")
+def cambios_generacion():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_cambios_generacion("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True, port=8082)

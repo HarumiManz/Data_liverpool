@@ -13,6 +13,7 @@ import {
 // También se importa el tipo de gráfica
 import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
+import React, {useEffect, useState} from "react";
 
 // Estos valores se declaran previamente para ser usados luego
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
@@ -50,7 +51,7 @@ export default function Barra() {
         <header className=" bg-white border-gray-100 shadow-xl rounded-md p-5">
           <div>
             <h1 className="text-2xl text-center justify-center font-bold">
-              Grafica de barras
+              Cambios de puesto por Generación
             </h1>
             <Bar data={data} options={options}></Bar>
           </div>

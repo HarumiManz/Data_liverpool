@@ -2,16 +2,17 @@
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
+import React, { useEffect, useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Pay() {
-  const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  const [chartData, setChartData] = useState({
+    labels: [],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
+        label: "total",
+        data: [],
         backgroundColor: [
           "#7C005C",
           "#901238",
@@ -31,16 +32,45 @@ export default function Pay() {
         borderWidth: 1,
       },
     ],
-  };
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          " http://192.168.68.106:8082/get5positions"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        // Actualizar el estado del gráfico con los datos obtenidos
+        setChartData({
+          labels: data.data.map((item: any) => item._id), // Reemplaza "_id" con el nombre correcto de tu campo
+          datasets: [
+            {
+              ...chartData.datasets[0], // Mantén la configuración anterior del dataset
+              data: data.data.map((item: any) => item.total_resignations), // Reemplaza "total_resignations" con el nombre correcto de tu campo
+            },
+          ],
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+    // Realizar esta solicitud cada vez que los datos cambien o al montar el componente
+  }, [chartData.datasets]);
 
   return (
     <div className=" bg-white">
       <header className="bg-white shadow-xl rounded-md p-5 h-full">
         <div className="w-full h-full grid place-items-center">
           <h1 className="text-2xl text-center justify-center font-bold">
-            Grafica de pastel
+            Top 5 áreas con más renuncias
           </h1>
-          <Pie data={data} />
+          <Pie data={chartData} />
         </div>
       </header>
     </div>
