@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
+import React, { useEffect, useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -22,40 +22,59 @@ ChartJS.register(
 );
 
 export default function BarraDoble() {
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
-  const data = {
-    labels,
+  const [chartData, setChartData] = useState({
+    labels: [],
     datasets: [
       {
-        label: "Dataset 1",
-        data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-        backgroundColor: "#A20068",
-      },
-      {
-        label: "Dataset 2",
-        data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
+        label: "",
+        data: [],
         backgroundColor: "#E8C9DE",
-      },
-      {
-        label: "Dataset 3",
-        data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-        backgroundColor: "#99007E",
+        borderColor: "#E8C9DE",
+        borderWidth: 1,
       },
     ],
-  };
+  });
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('http://192.168.68.106:8082/getdoblebarra'); // Llama al endpoint '/getdoblebarra'
+        if (response.ok) {
+          const result = await response.json();
+          if (result && result.data) {
+            setChartData({
+              labels: result.data.map((item: any) => item.area),
+              datasets: [
+                {
+                  label: "Masculino",
+                  data: result.data.map((item:any)=> item.genero_distribution[1].count),
+                  backgroundColor: "#A20068"
+                },
+                {
+                  label: "Femenino",
+                  data: result.data.map((item:any)=> item.genero_distribution[0].count),
+                  backgroundColor: "#E8C9DE"
+                },
+              ],
+            });
+          } else {
+            throw new Error('Los datos obtenidos no tienen la estructura esperada');
+          }
+        } else {
+          throw new Error('Error al obtener datos');
+        }
+      } catch (error) {
+        console.error('Hubo un error al obtener datos:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   const options = {
     plugins: {
       title: {
         display: true,
-        text: "Chart.js Bar Chart - Stacked",
       },
     },
     responsive: true,
@@ -75,9 +94,9 @@ export default function BarraDoble() {
         <header className="bg-white shadow-xl rounded-md p-5">
           <div>
             <h1 className="text-2xl text-center justify-center font-bold">
-              Grafica de barras
+              Distribución de género por área
             </h1>
-            <Bar data={data} options={options}></Bar>
+            {chartData && <Bar data={chartData} options={options} />}
           </div>
         </header>
       </div>
