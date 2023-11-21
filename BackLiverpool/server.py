@@ -235,6 +235,49 @@ def graficaLinea():
         return jsonify({"message": "error"}), 500
     
     
+## Jorge graficas 
+@app.route("/getrazongenero")
+def razon_genero():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_razon_genero("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+
+## Jorge graficas     
+@app.route("/getdispantiedad")
+def disp_antiguedad_edad():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_disp_antiguedad_edad("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+
+## Jorge graficas     
+@app.route("/getcalorarea")
+def calor_area():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_calor_area("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+    
+    
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True, port=8082)

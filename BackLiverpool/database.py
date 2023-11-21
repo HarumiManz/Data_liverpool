@@ -104,7 +104,7 @@ class Reader:
         cambios_generacion = list(collection.aggregate(pipeline))
         return cambios_generacion
     
-    def get_cambios_antiguedad(self, collectionName): ## falta checarlo Harumi 
+    def get_cambios_antiguedad(self, collectionName): 
         collection = self.db[collectionName]
 
         pipeline = [
@@ -182,6 +182,69 @@ class Reader:
                 "tienda": "$_id",
                 "cambiosPuestoPromedio": 1,
                 "antiguedadPromedio": 1
+                }
+            }
+        ]
+        
+    ##Jorge querys grafica de pay 
+    def get_razon_genero(self, collectionName):
+        collection = self.db[collectionName]
+
+        pipeline = [
+            {
+                "$group": {
+                    "_id": "$genero",
+                    "count": { "$sum": 1 }
+                }
+            },
+            {
+                "$project": {
+                    "_id": 0,
+                    "genero": "$_id",
+                    "count": "$count"
+                }
+            }
+        ]
+        
+        razon_genero = list(collection.aggregate(pipeline))
+        return razon_genero
+    
+    ##Grafica de dispersion Jorge 
+    def get_disp_antiguedad_edad(self, collectionName):
+        collection = self.db[collectionName]
+
+        pipeline = [
+            {
+                "$project": {
+                    "_id": 0,
+                    "x": "$antiguedad",
+                    "y": "$edad"
+                }
+            },
+            {"$limit": 500}
+        ]
+        
+        disp_antiguedad_edad = list(collection.aggregate(pipeline))
+        return disp_antiguedad_edad
+    
+    ##Grafica de calor Jorge 
+    def get_calor_area(self, collectionName):
+        collection = self.db[collectionName]
+
+        pipeline = [
+            {
+                "$group": {
+                    "_id": "$area",
+                    "media_antiguedad": { "$avg": "$antiguedad" },
+                    "count": { "$sum": 1 }
+                }
+            },
+            {
+                "$project": {
+                    "_id": 0,
+                    "area": "$_id",
+                    "media_antiguedad": "$media_antiguedad",
+                    "cantidad_area": "$count"
                 }
             }
         ]
