@@ -11,7 +11,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
 import React, { useEffect, useState } from "react";
 
 ChartJS.register(
@@ -38,7 +37,6 @@ export default function Lineal() {
     ],
   });
 
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -51,9 +49,7 @@ export default function Lineal() {
               datasets: [
                 {
                   label: "Antiguedad",
-                  data: result.data.map(
-                    (item: any) => item.antiguedadPromedio
-                  ),
+                  data: result.data.map((item: any) => item.antiguedadPromedio),
                   backgroundColor: "#6B0052",
                   borderColor: "#6B0052",
                   borderWidth: 3,
@@ -66,7 +62,7 @@ export default function Lineal() {
                   backgroundColor: "#C35293",
                   borderColor: "#C35293",
                   borderWidth: 3,
-                }
+                },
               ],
             });
           } else {
@@ -92,7 +88,6 @@ export default function Lineal() {
       },
       title: {
         display: true,
-        text: "Chart.js Line Chart",
       },
     },
   };
