@@ -57,8 +57,7 @@ export default function Lineal() {
                 {
                   label: "Cambios de puesto",
                   data: result.data.map(
-                    (item: any) => item.cambiosPuestoPromedio
-                  ),
+                    (item: any) => item.cambiosPuestoPromedio),
                   backgroundColor: "#C35293",
                   borderColor: "#C35293",
                   borderWidth: 3,
@@ -97,7 +96,7 @@ export default function Lineal() {
       <header className="bg-white shadow-xl rounded-md p-5 border-gray-400 mb-10">
         <div>
           <h1 className="text-2xl text-center justify-center font-bold">
-            Grafica de lineas
+            Cambios de puesto, antiguedad por Tienda
           </h1>
           <Line options={options} data={chartData}></Line>
         </div>

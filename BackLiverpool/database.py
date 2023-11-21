@@ -132,7 +132,6 @@ class Reader:
     def get_gender_distribution(self, collectionName):
         collection = self.db[collectionName]
         
-        # Utilizando la agregación para obtener los 5 puestos con más renuncias
         pipeline_top_positions = [
             {"$match": {"Estatus": "renuncia"}},  # Filtra solo los documentos con estatus "renuncia"
             {"$group": {"_id": "$area", "total_resignations": {"$sum": 1}}},
@@ -165,6 +164,7 @@ class Reader:
         gender_distribution = list(collection.aggregate(gender_distribution_pipeline))
         return gender_distribution
     
+    # grafica de lineas 
     def get_tienda(self, collectionName):
         collection = self.db[collectionName]
         
@@ -185,6 +185,8 @@ class Reader:
                 }
             }
         ]
+        tienda = list(collection.aggregate(pipeline))
+        return tienda
         
     ##Jorge querys grafica de pay 
     def get_razon_genero(self, collectionName):

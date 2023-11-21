@@ -15,7 +15,7 @@ export default function Bienvenido() {
               Liverpool.”
             </p>
             <a
-              href="#inicio"
+              href="Herramienta"
               className="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-m px-9 py-3 text-center mr-2 mb-2"
             >
               Pruébalo
