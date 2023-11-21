@@ -9,7 +9,7 @@ export default function StoryTelling() {
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white">
               ¿Sabías qué?
             </h2>
-            <p className="mb-2 text-base text-xl ">
+            <p className="mb-2  text-xl ">
               Mediante un estudio realizado por OCCMundial, junto con las
               consultoras GDP y Grupo Azimuth, se descubrió que en{" "}
               <span className="text-2xl font-bold text-pink-700">México 4 de cada 10</span> empleados

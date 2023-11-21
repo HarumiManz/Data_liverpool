@@ -16,7 +16,7 @@ export default function Dashboard() {
         </div>
 
         <div className="px-10 py-5 bg-white flex flex-row gap-4">
-          <div className="basis-2/3">
+          <div className="basis-2/3 ">
             <BarraDoble />
           </div>
           <div className="basis-1/3">
