@@ -208,5 +208,33 @@ def cambios_antiguedad():
         print(err)
         return jsonify({"message": "error"}), 500
 
+@app.route("/getdoblebarra") 
+def doblebarra():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_gender_distribution("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+    
+@app.route("/getlinea") 
+def graficaLinea():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_tienda("Archivo")
+        return jsonify({"message": "success", "data": data })
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
+    
+    
+
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True, port=8082)

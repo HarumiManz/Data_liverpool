@@ -12,7 +12,6 @@ import {
 } from "chart.js";
 // También se importa el tipo de gráfica
 import { Bar } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
 import React, { useEffect, useState } from "react";
 
 // Estos valores se declaran previamente para ser usados luego
