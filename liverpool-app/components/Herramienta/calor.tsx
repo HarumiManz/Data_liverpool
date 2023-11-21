@@ -5,7 +5,6 @@
 import { Chart as ChartJS, Title, Tooltip, Legend } from "chart.js";
 import { TreemapController, TreemapElement } from "chartjs-chart-treemap";
 import { Chart } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
 
 ChartJS.register(TreemapController, TreemapElement, Title, Tooltip, Legend);
 
@@ -22,7 +21,7 @@ export default function Calor() {
   const data = {
     datasets: [
       {
-        label: "My treemap dataset",
+        label: "",
         data: [
           { valor: 1, costo: 6 },
           { valor: 23, costo: 23 },
