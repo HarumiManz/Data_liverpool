@@ -16,7 +16,7 @@ export default function Galeria() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso1.jpeg"
               alt="analitica "
               width={400}
@@ -25,7 +25,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso9.png"
               alt="analitica "
               width={400}
@@ -34,7 +34,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso8.png"
               alt="analitica "
               width={400}
@@ -43,7 +43,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso7.png"
               alt="analitica "
               width={400}
@@ -52,7 +52,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso2.jpeg"
               alt="analitica "
               width={400}
@@ -61,7 +61,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso3.jpeg"
               alt="analitica "
               width={400}
@@ -70,7 +70,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso5.jpeg"
               alt="analitica "
               width={400}
@@ -79,7 +79,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso4.jpeg"
               alt="analitica "
               width={400}
@@ -88,7 +88,7 @@ export default function Galeria() {
           </div>
           <div>
             <Image
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
               src="/images/paso6.jpeg"
               alt="analitica "
               width={400}

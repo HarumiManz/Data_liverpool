@@ -1,3 +1,3 @@
-import titulo from "./titulo";
+import Recomendaciones from "./recomen";
 
-export {titulo};
+export {Recomendaciones};
