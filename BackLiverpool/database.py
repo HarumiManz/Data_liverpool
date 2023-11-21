@@ -48,7 +48,6 @@ class Reader:
     def get5positions(self, collectionName):
         collection = self.db[collectionName]
         
-        # Utilizando la agregación para obtener los 5 puestos con más renuncias
         pipeline = [
             {"$match": {"Estatus": "renuncia"}},  # Filtra solo los documentos con estatus "renuncia"
             {"$group": {"_id": "$area", "total_resignations": {"$sum": 1}}},
@@ -59,7 +58,7 @@ class Reader:
         top_positions = list(collection.aggregate(pipeline))
         return top_positions
 
-    # grafica 
+    #
     def get_cambios_generacion(self, collectionName):
         collection = self.db[collectionName]
 
