@@ -48,7 +48,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa2.jpeg"
+                src="/images/casa3.jpeg"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -68,7 +68,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa3.jpeg"
+                src="/images/casa2.jpeg"
                 alt="analitica "
                 width={300}
                 height={300}
