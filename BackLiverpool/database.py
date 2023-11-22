@@ -244,10 +244,11 @@ class Reader:
                 "$project": {
                     "_id": 0,
                     "area": "$_id",
-                    "media_antiguedad": "$media_antiguedad",
+                    "media_antiguedad":  { "$trunc": [ "$media_antiguedad", 2 ] },
                     "cantidad_area": "$count"
                 }
-            }
+            },
+            {"$limit": 100}
         ]
         
         tienda = list(collection.aggregate(pipeline))

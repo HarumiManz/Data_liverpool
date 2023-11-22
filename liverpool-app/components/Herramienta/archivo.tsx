@@ -18,7 +18,7 @@ export default function Archivo() {
         form.append("file", file);
         setfileUploading(true);
         //cambiar url siempre que se corra el server.py
-        const response = await fetch("http://192.168.68.106:8082/upload", {
+        const response = await fetch("http://192.168.68.109:8082/upload", {
           method: "POST",
           body: form,
         });

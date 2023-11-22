@@ -9,7 +9,6 @@ import {
 } from "chart.js";
 import { Scatter } from "react-chartjs-2";
 import React, { useEffect, useState } from "react";
-import { faker } from "@faker-js/faker";
 
 ChartJS.register(PointElement, LinearScale, Tooltip, Legend);
 
@@ -29,7 +28,7 @@ export default function Dispersion() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://192.168.68.106:8082/getdispantiedad"
+          "http://192.168.68.109:8082/getdispantiedad"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok")
