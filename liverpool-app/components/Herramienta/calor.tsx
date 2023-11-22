@@ -40,7 +40,7 @@ export default function Calor() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://192.168.68.109:8082/getcalorarea"
+          "http://127.0.0.1:8082/getcalorarea"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok")

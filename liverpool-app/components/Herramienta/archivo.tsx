@@ -18,12 +18,12 @@ export default function Archivo() {
         form.append("file", file);
         setfileUploading(true);
         //cambiar url siempre que se corra el server.py
-        const response = await fetch("http://192.168.68.109:8082/upload", {
+        const response = await fetch("http://127.0.0.1:8082/upload", {
           method: "POST",
           body: form,
         });
         const data = await response.json();
-        setfileUploading(false);
+        setfileUploading(false);  
         if (!data.error) {
           setfileResponse(data);
           console.log("Resultado : ", data);
@@ -39,7 +39,7 @@ export default function Archivo() {
 
   const downloadFile = async () => {
     //cambiar url siempre que se corra el server.py 
-    const response = await fetch("http://192.168.68.106:8082/download", {
+    const response = await fetch("http://127.0.0.1:8082/download", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",

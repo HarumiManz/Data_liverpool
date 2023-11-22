@@ -103,10 +103,10 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/burbuja1.jpeg"
+                src="/images/liverpool.png"
                 alt="analitica "
-                width={350}
-                height={350}
+                width={700}
+                height={700}
                 className="px-10"
               />
             </figcaption>
@@ -123,7 +123,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/burbuja3.jpeg"
+                src="/images/CeDis.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -143,10 +143,10 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/burbuja2.jpeg"
+                src="/images/Suburbia.png"
                 alt="analitica "
-                width={600}
-                height={600}
+                width={700}
+                height={700}
                 className="px-10 "
               />
             </figcaption>

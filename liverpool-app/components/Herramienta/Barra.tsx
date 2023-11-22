@@ -36,7 +36,7 @@ export default function Barra() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://192.168.68.109:8082/getpuesto");
+        const response = await fetch("http://127.0.0.1:8082/getpuesto");
         if (response.ok) {
           const result = await response.json();
           if (result && result.data) {

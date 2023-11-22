@@ -38,7 +38,7 @@ export default function Pay() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://192.168.68.109:8082/get5positions"
+          "http://127.0.0.1:8082/get5positions"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

@@ -38,7 +38,7 @@ export default function BarraDoble() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('http://192.168.68.109:8082/getdoblebarra'); // Llama al endpoint '/getdoblebarra'
+        const response = await fetch('http://127.0.0.1:8082/getdoblebarra'); // Llama al endpoint '/getdoblebarra'
         if (response.ok) {
           const result = await response.json();
           if (result && result.data) {
