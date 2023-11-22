@@ -40,7 +40,7 @@ export default function Lineal() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://127.0.0.1:8082/getlinea");
+        const response = await fetch("http://localhost:8082/getlinea");
         if (response.ok) {
           const result = await response.json();
           if (result && result.data) {

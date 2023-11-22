@@ -7,7 +7,7 @@ export default function Tabla() {
   useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8082/getFirstFiveDocuments");
+        const response = await fetch("http://localhost:8082/getFirstFiveDocuments");
         if (response.ok) {
           const data = await response.json();
           setDatos(data.data);
