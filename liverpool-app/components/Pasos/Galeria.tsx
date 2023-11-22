@@ -89,13 +89,12 @@ export default function Galeria() {
           <div>
             <Image
               className="h-auto max-w-full rounded-lg overflow-hidden pt-5 lg:pt-[1%] hover:scale-110 transition-all duration-200 "
-              src="/images/paso6.jpeg"
+              src="/images/paso9.png"
               alt="analitica "
               width={400}
               height={400}
             />
-          </div>
-          
+          </div>          
         </div>
       </div>
     </>
