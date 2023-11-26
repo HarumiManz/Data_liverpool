@@ -12,7 +12,7 @@ export default function Bienvenido() {
             <p className="max-w-2xl mb-6 font-light text-gray-800 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               "Enfocados en preservar el talento, te invitamos a descubrir cómo
               podemos juntos cuidar y prevenir la rotación de empleados en
-              Liverpool.”
+              Grupo Puerto Liverpool.”
             </p>
             <a
               href="Herramienta"
