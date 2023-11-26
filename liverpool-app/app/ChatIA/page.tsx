@@ -10,7 +10,8 @@ export default function Chat() {
         <div className="flex-1 flex-row pt-10 mx-10 ">
           <h1 className="text-[#d14b8e] text-4xl font-bold">Habla con LIA!</h1>
           <h2 className="text-black pt-2 text-xl pb-5">
-            Ella te ayudara a responder todas tus dudas existenciales!
+            Ella te ayudará a formular las mejores estrategias! Cuidemos nuestro talento generando
+            planes de acción específicos para la retención de talento.
           </h2>
         </div>
         <div className="flex flex-9 h-full relative justify-center content-center mb-10">

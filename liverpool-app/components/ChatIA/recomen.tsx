@@ -8,8 +8,8 @@ export default function Recomendaciones() {
               Acciones a tomar
             </h2>
             <p className="mb-5 font-light text-gray-700 sm:text-xl dark:text-gray-400">
-              Con las recomendaciones de Chat LIA podemos hacer un plan de
-              mitigación donde podamos mantener al talento.{" "}
+              Con las recomendaciones de Chat LIA podemos generar estrategias para 
+              la retención de empleados.{" "}
             </p>
           </div>
           <div className="bg-gradient-to-t from-white via-pink-200 to-white space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
@@ -110,7 +110,7 @@ export default function Recomendaciones() {
                 Recomendaciones para la Herramienta{" "}
               </h3>
               <p className="font-light text-gray-600 sm:text-lg dark:text-gray-400">
-                Para mejorar la Herramienta de predicciones se pueden agregar
+                Para mejorar la Herramienta de predicción se pueden agregar
                 los siguientes datos:{" "}
               </p>
               <ul role="list" className="pt-5 mb-8 space-y-4 text-left">
@@ -199,8 +199,8 @@ export default function Recomendaciones() {
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 Para las posiciones con mas renuncias podemos identificar que
                 principalmente buscan una estabilidad financiera.
-                Aproximadamente el 90 % de sus preocupaciones y objetivos estan
-                centrados en aspectos econocmicos.{" "}
+                Aproximadamente el 90 % de sus preocupaciones y objetivos están
+                centrados en aspectos económicos.{" "}
               </p>
               <ul role="list" className="pt-10 mb-8 space-y-4 text-left">
                 <li className="flex items-center space-x-3">
@@ -246,7 +246,7 @@ export default function Recomendaciones() {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>programas de educación financiera </span>
+                  <span>Programas de educación financiera </span>
                 </li>
               </ul>
             </div>
