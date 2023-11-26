@@ -57,7 +57,7 @@ export default function Dispersion() {
       <header className="bg-white shadow-xl rounded-md p-5">
         <div>
           <h1 className="text-2xl text-center justify-center font-bold">
-            Antiguedad y Edad
+            Antigüedad y Edad
           </h1>
           <Scatter data={chartData} options={options}></Scatter>
         </div>

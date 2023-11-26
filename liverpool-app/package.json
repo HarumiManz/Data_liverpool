@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "ai": "^2.2.23",
     "chartjs-chart-treemap": "^2.3.0",
     "faker": "^6.6.6",

@@ -96,7 +96,7 @@ export default function Lineal() {
       <header className="bg-white shadow-xl rounded-md p-5 border-gray-400 mb-10">
         <div>
           <h1 className="text-2xl text-center justify-center font-bold">
-            Cambios de puesto, antiguedad por Tienda
+            Cambios de puesto, Antigüedad por Tienda
           </h1>
           <Line options={options} data={chartData}></Line>
         </div>

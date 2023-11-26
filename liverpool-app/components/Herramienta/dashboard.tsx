@@ -10,7 +10,7 @@ export default function Dashboard() {
           </h1>
           <p className="py-5 font-light text-gray-700 md:text-lg">
             {" "}
-            Con base a tus datos de prediccion podras hacer un analisis
+            Con base a tus datos de predicción podrás hacer un análisis
             predictivo mas visual{" "}
           </p>
         </div>

@@ -71,11 +71,11 @@ export default function Archivo() {
         </div>
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-2">
           <div className=" bg-pink-50 shadow-xl rounded-md p-10 m-5">
-            <h1 className="text-2xl font-medium text-pink-950">
+            <h1 className="text-2xl font-medium text-pink-950 text-center">
               Cargar Archivo
             </h1>
             <p className="text-xl font-light text-gray-800 pt-3">
-              Solo archivos .xlsx con menos de 1 Gb
+              Solo archivos csv o xlxs con menos de 1 Gb.
             </p>
             {fileUploading ? (
               <div className="w-[60%] h-full justify-center content-center flex flex-row">
@@ -110,13 +110,13 @@ export default function Archivo() {
             )}
           </div>
           <div className=" bg-pink-50 shadow-xl rounded-md p-10 m-5">
-            <h2 className="text-2xl font-medium text-pink-900">
-              Descarga tu nuevo Excel
+            <h2 className="text-2xl font-medium text-pink-900 text-center">
+              Descarga tu nuevo archivo
             </h2>
             <h1 className="text-xl font-light text-gray-800 pt-3">
               {" "}
-              Puedes Descargar tu nuevo excel con la nueva columna agregada con
-              el resultado de tu predicción
+              Desacarga tu archivo con la nueva columna "estatus" para conocer la probabilidad 
+              de rotación de tus empleados.
             </h1>
             <div className=" rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
               <h3 className="py-5 px-3">Nuevo excel</h3>

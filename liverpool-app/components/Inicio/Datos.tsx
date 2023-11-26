@@ -10,7 +10,7 @@ export default function Datos() {
           </h2>
           <p className="pb-5 px-20 flex justify-center items-center text-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
             Grupo Puerto Liverpool cuenta con aproximadamente una población de
-            73,330 colaboradores los cuales se ubican principalmente en 
+            73,330 colaboradores los cuales se ubican principalmente en
             Suburbia, CeDis y Liverpool pero debido a la rotación de empleados
             que han experimentado de 2019-2023 han tenido que contratar…
           </p>
@@ -28,7 +28,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa1.jpeg"
+                src="/images/Liverpool70.png"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -48,7 +48,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa3.jpeg"
+                src="/images/CeDis3.png"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -68,7 +68,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa2.jpeg"
+                src="/images/Suburbia1.5.png"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -78,7 +78,7 @@ export default function Datos() {
           </figure>
         </div>
         <div className="pt-14 mx-auto">
-          <h1 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white"> ¿Tú o tu equipo son propensos a renunciar?</h1>  
+          <h1 className="flex justify-center items-center mb-4 text-3xl font-bold tracking-tight text-pink-700 sm:text-4xl dark:text-white"> ¿Tú o tu equipo son propensos a renunciar?</h1>
           <p className="px-20 flex justify-center items-center text-center mb-4 font-light text-gray-700 lg:mb-5 sm:text-xl dark:text-gray-400">
             Dentro de las tres tiendas antes mencionadas la baja de personal no
             es igual en todos los puestos, existen algunos con más riesgo.
@@ -97,13 +97,14 @@ export default function Datos() {
                 LIVERPOOL
               </h3>
               <p className="my-4">
-              <span className="font-bold text-pink-700 text-xl">Cajero </span> es el cuarto puesto con mayor población, pero necesitas
-              <span className="font-bold text-pink-700 text-xl">1.2</span> personas para cubrir <span className="font-bold text-pink-700 text-xl">1</span> posición.
+                <span className="font-bold text-pink-700 text-xl"> Vendedor </span> es el primer puesto con más población, pero <span className="font-bold text-pink-700 text-xl"> Cajero </span>
+                es el puesto con la tasa más alta de rotación ya que en <span className="font-bold text-pink-700 text-xl"> 1 año </span> necesitas contratar <span className="font-bold text-pink-700 text-xl">3 personas </span>
+                para cubrir las actividades de <span className="font-bold text-pink-700 text-xl"> 1 posición </span>.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/liverpool.png"
+                src="/images/personasprueba.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -117,13 +118,14 @@ export default function Datos() {
                 CEDIS
               </h3>
               <p className="my-4">
-                <span className="font-bold text-pink-700 text-xl">Recepción</span> es el segundo puesto con más población, pero necesitas
-                contratar <span className="font-bold text-pink-700 text-xl">5</span> personas para cubrir <span className="font-bold text-pink-700 text-xl">1</span> posición.
+                <span className="font-bold text-pink-700 text-xl"> Personal  </span> es el primer puesto con más población, pero <span className="font-bold text-pink-700 text-xl"> Recepción </span>
+                es el puesto con la tasa más alta de rotación ya que en <span className="font-bold text-pink-700 text-xl"> 1 año </span> necesitas contratar <span className="font-bold text-pink-700 text-xl">10 personas </span>
+                para cubrir las actividades de <span className="font-bold text-pink-700 text-xl"> 1 posición </span>.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/CeDis.png"
+                src="/images/personasCeDis.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -137,13 +139,14 @@ export default function Datos() {
                 SUBURBIA
               </h3>
               <p className="my-4">
-                <span className="font-bold text-pink-700 text-xl">Cajero</span> es el segundo puesto con más población, pero necesitas
-                contratar <span className="font-bold text-pink-700 text-xl">3</span> personas para cubrir <span className="font-bold text-pink-700 text-xl">1</span> posición.
+                <span className="font-bold text-pink-700 text-xl"> Auxiliar </span> es el primer puesto con más población, pero <span className="font-bold text-pink-700 text-xl"> Cajero </span>
+                es el puesto con la tasa más alta de rotación ya que en <span className="font-bold text-pink-700 text-xl"> 1 año </span> necesitas contratar <span className="font-bold text-pink-700 text-xl">6 personas </span>
+                para cubrir las actividades de <span className="font-bold text-pink-700 text-xl"> 1 posición </span>.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/Suburbia.png"
+                src="/images/personassub.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -152,6 +155,8 @@ export default function Datos() {
             </figcaption>
           </figure>
         </div>
+        <p className=" text-right text-xs text-pink-700 text-bold"> *Asumiendo que los datos de personal activo son representativos de la población de toda la compañía.</p>
+        <p className=" text-right text-xs text-pink-700"> **El análisis realizado en esta sección se basa en los datos proporcionados por Grupo Puerto Liverpool.</p>
       </section>
     </>
   );

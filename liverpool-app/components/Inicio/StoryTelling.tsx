@@ -15,7 +15,7 @@ export default function StoryTelling() {
               <span className="text-2xl font-bold text-pink-700">México 4 de cada 10</span> empleados
               estarían dispuestos a <span className="text-2xl font-bold text-pink-700">renunciar</span>{" "}
               a su actual puesto laboral en los
-              <span className="text-2xl font-bold text-pink-700">próximos 6 meses</span>, lo que
+              <span className="text-2xl font-bold text-pink-700"> próximos 6 meses</span>, lo que
               equivale a llenar
               <span className="text-2xl font-bold text-pink-700"> 600 </span>veces el{" "}
               <span className="text-2xl font-bold text-pink-700">Estadio Azteca.</span>
