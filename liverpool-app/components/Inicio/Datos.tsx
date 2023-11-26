@@ -155,6 +155,8 @@ export default function Datos() {
             </figcaption>
           </figure>
         </div>
+        <p className=" text-right text-xs text-pink-700 "> *Asumiendo que los datos de personal activo son representativos de la población de toda la compañía.</p>
+        <p className=" text-right text-xs text-pink-700"> **El análisis realizado en esta sección se basa en los datos proporcionados por Grupo Puerto Liverpool.</p>
       </section>
     </>
   );
