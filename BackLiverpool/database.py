@@ -35,6 +35,26 @@ class Reader:
             res.append(document)
         return res
     
+    #tabla renuncias y activos 
+    def get_activos(self, collectionName):
+        collection = self.db[collectionName]
+        documents = collection.find({})
+        
+        active_count = 0
+        resigned_count = 0
+
+        for document in documents:
+            document["_id"] = str(document["_id"])
+            if document.get("Estatus") == "activos":
+                active_count += 1
+            elif document.get("Estatus") == "renuncia":
+                resigned_count += 1
+
+        return {
+            "activos": active_count,
+            "renunciados": resigned_count
+        }
+    
     # tabla de herramientas 
     def getFirstFive(self, collectionName):
         collection = self.db[collectionName]

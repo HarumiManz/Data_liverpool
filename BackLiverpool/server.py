@@ -36,7 +36,6 @@ def verify_headers(h):
             return False
     return True
 
-
 @app.route("/upload", methods=["POST"])
 def upload():
     global most_recent_file
@@ -128,6 +127,19 @@ def download_file():
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
     return jsonify({"message": "file doesn't exists", "error": True}), 400
+
+@app.route("/activos")
+def getActivos():
+    try:
+        temp_reader = Reader(
+            MONGO_URL,
+            "LiverpoolTestBack",
+        )
+        data = temp_reader.get_activos("Archivo")
+        return jsonify({"message": "success", "data": data})
+    except Exception as err:
+        print(err)
+        return jsonify({"message": "error"}), 500
 
 
 @app.route("/getAllDocuments")

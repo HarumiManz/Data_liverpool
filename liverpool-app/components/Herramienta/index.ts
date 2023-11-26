@@ -8,5 +8,7 @@ import Calor from "./calor";
 import BarraDoble from "./BarraDoble";
 import Dispersion from "./Dispersion";
 import Lineal from "./Lineal";
+import Tabla2 from "./Tabla2";
+import Activos from "./activo";
 
-export {Tabla, Archivo, Machine, Dashboard,Barra,BarraDoble,Dispersion,Calor, Pay, Lineal}
+export {Tabla, Tabla2, Archivo, Machine, Dashboard,Barra,BarraDoble,Dispersion,Calor, Pay, Lineal, Activos}
