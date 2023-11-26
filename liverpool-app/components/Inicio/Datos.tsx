@@ -28,7 +28,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa1.jpeg"
+                src="/images/Liverpool70.png"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -48,7 +48,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa3.jpeg"
+                src="/images/CeDis3.png"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -68,7 +68,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/casa2.jpeg"
+                src="/images/Suburbia1.5.png"
                 alt="analitica "
                 width={300}
                 height={300}
@@ -104,7 +104,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/liverpool.png"
+                src="/images/personasprueba.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -125,7 +125,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/CeDis.png"
+                src="/images/personasCeDis.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -146,7 +146,7 @@ export default function Datos() {
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
               <Image
-                src="/images/Suburbia.png"
+                src="/images/personassub.png"
                 alt="analitica "
                 width={700}
                 height={700}
@@ -155,7 +155,7 @@ export default function Datos() {
             </figcaption>
           </figure>
         </div>
-        <p className=" text-right text-xs text-pink-700 "> *Asumiendo que los datos de personal activo son representativos de la población de toda la compañía.</p>
+        <p className=" text-right text-xs text-pink-700 text-bold"> *Asumiendo que los datos de personal activo son representativos de la población de toda la compañía.</p>
         <p className=" text-right text-xs text-pink-700"> **El análisis realizado en esta sección se basa en los datos proporcionados por Grupo Puerto Liverpool.</p>
       </section>
     </>

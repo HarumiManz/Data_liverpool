@@ -91,7 +91,7 @@ export default function Footer() {
               <ul>
                 <li className="mb-4">
                   <h3 className="text-gray-600 hover:underline dark:text-gray-400 text-center">
-                    Liverpool
+                    Grupo Puerto Liverpool
                     </h3>
                 </li>
               </ul>
