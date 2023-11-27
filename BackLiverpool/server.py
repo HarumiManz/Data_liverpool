@@ -15,7 +15,6 @@ MOST_HEADERS = [
     "edad",
     "genero",
     "antiguedad",
-    "cambios de puesto",
     "area",
     "tienda",
     "ubicacion",
@@ -72,7 +71,11 @@ def upload():
     try:
         new_data = read_csv(f"./temp/{file_name}.csv")
         predictions = model.predict(new_data)
+        proba_predictions = model.predict_proba(new_data)
         new_data["Estatus"] = predictions
+        ##probabilidad de que renuncie 
+        prediction = [[round(prob[0], 2), round(prob[1], 2)] for prob in proba_predictions]
+        new_data["Probabilidad"] = prediction
         new_data.to_excel(f"./temp/{file_name}.xlsx", index=False, engine="openpyxl")
 
     except Exception as err:

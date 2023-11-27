@@ -47,7 +47,7 @@ export default function Tabla2() {
                   Estatus
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Porcentaje
+                  Probabilidad
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Tienda
@@ -74,7 +74,7 @@ export default function Tabla2() {
                   }
                 >
                   <td className="px-6 py-4">{item.Estatus}</td>
-                  <td className="px-6 py-4">{item.ubicacion}</td>
+                  <td className="px-6 py-4">{item.Probabilidad}</td>
                   <td className="px-6 py-4">{item.tienda}</td>
                   <td className="px-6 py-4">{item.area}</td>
                   <td className="px-6 py-4">{item.generacion}</td>
