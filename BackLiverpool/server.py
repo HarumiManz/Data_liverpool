@@ -72,8 +72,10 @@ def upload():
         new_data = read_csv(f"./temp/{file_name}.csv")
         predictions = model.predict(new_data)
         proba_predictions = model.predict_proba(new_data)
+        #proba_predicitons = [f"{num * 100:.2f}" for num in proba_predicitons[:, 1]]
         new_data["Estatus"] = predictions
-        ##probabilidad de que renuncie 
+        #probabilidad de que renuncie 
+        #proba_predictions = proba_predictions * 100
         prediction = [[round(prob[0], 2), round(prob[1], 2)] for prob in proba_predictions]
         new_data["Probabilidad"] = prediction
         new_data.to_excel(f"./temp/{file_name}.xlsx", index=False, engine="openpyxl")

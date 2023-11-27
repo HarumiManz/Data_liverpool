@@ -45,17 +45,17 @@ export default function Lineal() {
           const result = await response.json();
           if (result && result.data) {
             setChartData({
-              labels: result.data.map((item: any) => item.tienda),
+              labels: result.data.map((item: any) => item._id),
               datasets: [
                 {
-                  label: "Antiguedad",
-                  data: result.data.map((item: any) => item.antiguedadPromedio),
+                  label: "Edad Promedio",
+                  data: result.data.map((item: any) => item.promedioEdad),
                   backgroundColor: "#6B0052",
                   borderColor: "#6B0052",
                   borderWidth: 3,
                 },
                 {
-                  label: "Cambios de puesto",
+                  label: "",
                   data: result.data.map(
                     (item: any) => item.cambiosPuestoPromedio),
                   backgroundColor: "#C35293",
@@ -96,7 +96,7 @@ export default function Lineal() {
       <header className="bg-white shadow-xl rounded-md p-5 border-gray-400 mb-10">
         <div>
           <h1 className="text-2xl text-center justify-center font-bold">
-            Cambios de puesto, Antigüedad por Tienda
+            Promedio de edad por puesto
           </h1>
           <Line options={options} data={chartData}></Line>
         </div>
