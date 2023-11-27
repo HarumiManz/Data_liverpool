@@ -49,8 +49,8 @@ export default function Dispersion() {
 
     fetchData();
   }, []);
-  console.log("2")
-  console.log(chartData)
+  //console.log("2")
+  //console.log(chartData)
 
   return (
     <div className="">
