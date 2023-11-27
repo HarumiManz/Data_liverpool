@@ -4,39 +4,35 @@ from uuid import uuid4
 from database import Reader
 import os
 import joblib
+import pandas as pd
 from pandas import read_csv, read_excel
+from catboost import CatBoostClassifier
+import datetime
 
 # pip install openpyxl
 
-##checar la url con mongo 
+##checar la url con mongo
 MONGO_URL = "mongodb://localhost:27017"
 
-MOST_HEADERS = [
-    "edad",
-    "genero",
-    "antiguedad",
-    "area",
-    "tienda",
-    "ubicacion",
-    "generacion",
-]
 
 app = Flask("Back Liverpool")
 CORS(app)
 
-model = joblib.load("./model.pkl")
+model: CatBoostClassifier = joblib.load("./model.pkl")
+features_info = {
+    "edad": {"default": 30, "type": int},
+    "genero": {"default": "femenino", "type": str},
+    "antiguedad": {"default": 2, "type": int},
+    "area": {"default": "cajero", "type": str},
+    "tienda": {"default": "liverpool", "type": str},
+    "ubicacion": {"default": "nacional tultitlan", "type": str},
+    "generacion": {"default": "millennial", "type": str},
+}
 
-most_recent_file = ""
-
-
-def verify_headers(h):
-    for i in MOST_HEADERS:
-        if i not in h:
-            return False
-    return True
 
 @app.route("/upload", methods=["POST"])
 def upload():
+    # File save
     global most_recent_file
     try:
         file = request.files["file"]
@@ -58,27 +54,98 @@ def upload():
     df.columns = [header.lower() for header in df.columns]
     headers = df.columns.tolist()
     lines = len(df)
-
-    if not verify_headers(headers):
-        return (
-            jsonify({"message": "Missing model necessary header", "error": True}),
-            400,
-        )
-
     output_file_path = f"./temp/{file_name}.csv"
     df.to_csv(output_file_path, index=False)
 
+    return (
+        jsonify(
+            {
+                "fileId": file_name,
+                "message": "success",
+                "fileHeaders": headers,
+                "modelHeaders": model.feature_names_,
+                "lines": lines,
+            }
+        ),
+        200,
+    )
+
+
+def clasificar_generacion(fecha_nacimiento):
+    fecha_nacimiento = datetime.datetime.strptime(fecha_nacimiento, "%Y-%m-%d")
+    if 1946 <= fecha_nacimiento.year <= 1964:
+        return "babyboomer"
+    elif 1965 <= fecha_nacimiento.year <= 1979:
+        return "generacionx"
+    elif 1980 <= fecha_nacimiento.year <= 1999:
+        return "millennial"
+    elif 2000 <= fecha_nacimiento.year <= 2015:
+        return "generacionz"
+
+
+@app.route("/predict", methods=["POST"])
+def transform():
     try:
-        new_data = read_csv(f"./temp/{file_name}.csv")
-        predictions = model.predict(new_data)
-        proba_predictions = model.predict_proba(new_data)
-        #proba_predicitons = [f"{num * 100:.2f}" for num in proba_predicitons[:, 1]]
-        new_data["Estatus"] = predictions
-        #probabilidad de que renuncie 
-        #proba_predictions = proba_predictions * 100
-        prediction = [[round(prob[0], 2), round(prob[1], 2)] for prob in proba_predictions]
-        new_data["Probabilidad"] = prediction
-        new_data.to_excel(f"./temp/{file_name}.xlsx", index=False, engine="openpyxl")
+        body = request.json
+        feature_mapping = body["map"]
+        file_name = body["fileId"]
+    except:
+        return jsonify({"message": "bad request"}), 403
+
+    df = pd.read_csv(f"./temp/{file_name}.csv")
+
+    df = df.applymap(lambda x: x.lower() if isinstance(x, str) else x)
+
+    # Apply transformations first without creating new columns
+    try:
+        if feature_mapping["genero"]:
+            df[feature_mapping["genero"]] = df[feature_mapping["genero"]].replace(
+                {"hombre": "masculino", "mujer": "femenino"}
+            )
+
+        if feature_mapping["generacion"]:
+            df[feature_mapping["generacion"]] = df[feature_mapping["generacion"]].apply(
+                clasificar_generacion
+            )
+        if feature_mapping["ubicacion"]:
+            df[feature_mapping["ubicacion"]] = df[
+                feature_mapping["ubicacion"]
+            ].str.replace(r"^\S+\s", "", regex=True)
+        if feature_mapping["tienda"]:
+            df[feature_mapping["tienda"]] = df[feature_mapping["tienda"]].apply(
+                lambda x: x.split()[0]
+            )
+        if feature_mapping["area"]:
+            df[feature_mapping["area"]] = df[feature_mapping["area"]].apply(
+                lambda x: x.split()[0] if not pd.isna(x) else None
+            )
+    except Exception as err:
+        print(err)
+        print("little bug")
+
+    # Rename columns as per the reverse mapping
+    reverse_mapping = {v: k for k, v in feature_mapping.items()}
+    df.rename(columns=reverse_mapping, inplace=True)
+
+    # Ensure all model features are present, add defaults for missing ones
+    for feature in model.feature_names_:
+        if feature not in df.columns:
+            worst_case = 0 if features_info[feature]["type"] == int else ""
+            default_value = features_info[feature].get("default", worst_case)
+            df[feature] = default_value
+
+    # Keep only the model's expected features in the correct order and convert types
+    df = df[model.feature_names_].astype(
+        {feature: features_info[feature]["type"] for feature in model.feature_names_}
+    )
+
+    try:
+        predictions = model.predict(df)
+        proba_predicitons = model.predict_proba(df)
+        proba_predicitons = [f"{num * 100:.2f}" for num in proba_predicitons[:, 1]]
+        df["Probabilidad"] = proba_predicitons
+        df["Estatus"] = predictions
+        df.to_excel(f"./temp/{file_name}.xlsx", index=False, engine="openpyxl")
 
     except Exception as err:
         print(err)
@@ -89,6 +156,7 @@ def upload():
             500,
         )
 
+    # Read and save predicted file
     try:
         temp_reader = Reader(
             MONGO_URL,
@@ -108,7 +176,7 @@ def upload():
         most_recent_file = file_name
 
         return (
-            jsonify({"message": "exitoso!", "fileId": file_name, "lines": lines}),
+            jsonify({"message": "exitoso!", "fileId": file_name}),
             200,
         )
 
@@ -132,6 +200,7 @@ def download_file():
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
     return jsonify({"message": "file doesn't exists", "error": True}), 400
+
 
 @app.route("/activos")
 def getActivos():
@@ -159,7 +228,8 @@ def getAllDocuments():
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-    
+
+
 @app.route("/getFirstFiveDocuments")
 def get_first_five_documents():
     try:
@@ -167,12 +237,13 @@ def get_first_five_documents():
             MONGO_URL,
             "LiverpoolTestBack",
         )
-        data = temp_reader.getFirstFive("Archivo")  
+        data = temp_reader.getFirstFive("Archivo")
         return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-    
+
+
 @app.route("/get5positions")
 def get_5_positions():
     try:
@@ -181,11 +252,12 @@ def get_5_positions():
             "LiverpoolTestBack",
         )
         data = temp_reader.get5positions("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-        
+
+
 @app.route("/getcambios")
 def cambios_generacion():
     try:
@@ -194,11 +266,12 @@ def cambios_generacion():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_cambios_generacion("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-    
+
+
 @app.route("/getpuesto")
 def cambios_puesto():
     try:
@@ -207,12 +280,13 @@ def cambios_puesto():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_cambios_puesto("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-        
-@app.route("/getcambiosAntiguedad")#falta checarlo Harumi 
+
+
+@app.route("/getcambiosAntiguedad")  # falta checarlo Harumi
 def cambios_antiguedad():
     try:
         temp_reader = Reader(
@@ -220,12 +294,13 @@ def cambios_antiguedad():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_cambios_antiguedad("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
 
-@app.route("/getdoblebarra") 
+
+@app.route("/getdoblebarra")
 def doblebarra():
     try:
         temp_reader = Reader(
@@ -233,11 +308,12 @@ def doblebarra():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_gender_distribution("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-    
+
+
 @app.route("/getlinea") 
 def graficaLinea():
     try:
@@ -250,9 +326,9 @@ def graficaLinea():
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-    
-    
-## Jorge graficas 
+
+
+## Jorge graficas
 @app.route("/getrazongenero")
 def razon_genero():
     try:
@@ -261,12 +337,13 @@ def razon_genero():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_razon_genero("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
 
-## Jorge graficas     
+
+## Jorge graficas
 @app.route("/getdispantiedad")
 def disp_antiguedad_edad():
     try:
@@ -275,12 +352,13 @@ def disp_antiguedad_edad():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_disp_antiguedad_edad("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
 
-## Jorge graficas     
+
+## Jorge graficas
 @app.route("/getcalorarea")
 def calor_area():
     try:
@@ -289,12 +367,11 @@ def calor_area():
             "LiverpoolTestBack",
         )
         data = temp_reader.get_calor_area("Archivo")
-        return jsonify({"message": "success", "data": data })
+        return jsonify({"message": "success", "data": data})
     except Exception as err:
         print(err)
         return jsonify({"message": "error"}), 500
-    
-    
+
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True, port=8082)
