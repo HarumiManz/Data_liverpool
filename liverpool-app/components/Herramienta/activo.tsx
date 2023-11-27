@@ -24,16 +24,16 @@ export default function Activos() {
 
   return (
     <>
-      <h1 className="my-3 text-center text-xl font-bold text-gray-800">
+      <h1 className="my-3 text-center text-xl font-bold text-pink-900">
         Conteo de Estatus
       </h1>
       <div className="my-5 text-center rounded-lg bg-white p-5 m-5">
-        <h1 className="text-2xl ">Activos:</h1>
-        <p className="text-xl">{datos.activos}</p>
+        <h1 className="text-2xl">Activos:</h1>
+        <p className=" font-bold text-xl">{datos.activos}</p>
       </div>
       <div className="my-5 text-center rounded-lg bg-white p-5 m-5">
         <h1 className="text-2xl">Renuncias:</h1>
-        <p className="text-xl">{datos.renunciados}</p>
+        <p className="font-bold text-xl">{datos.renunciados}</p>
       </div>
     </>
   );
