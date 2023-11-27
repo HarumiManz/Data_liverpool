@@ -1,6 +1,3 @@
 # Liverpool es parte de mi vida 
 
-
-
-Jorge: Instalar "npm i"
- la libreria que se esta usando es "react-chartjs-2"
+Una plataforma amigable para el personal de puerto liverpool, donde empleamos conocimiento de desarrollo web, inteligencia artificial y analitica de datos. Su propósito es ayudar a recursos humanos a predecir a los empleados, con el fin de emplear estrategias de retención de talento y planes de mitigación. 
