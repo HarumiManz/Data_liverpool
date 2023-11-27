@@ -115,11 +115,11 @@ export default function Archivo() {
             </h2>
             <h1 className="text-xl font-light text-gray-800 pt-3">
               {" "}
-              Desacarga tu archivo con la nueva columna "estatus" para conocer la probabilidad 
+              Descarga tu archivo con la nueva columna "estatus" para conocer la probabilidad 
               de rotación de tus empleados.
             </h1>
             <div className=" rounded-md border-dashed border-pink-500 border-2 p-2 m-5">
-              <h3 className="py-5 px-3">Nuevo excel</h3>
+              <h3 className="py-5 px-3">Nuevo archivo</h3>
               <div className="px-8 flex justify-center items-center">
                 <button
                   onClick={downloadFile}
