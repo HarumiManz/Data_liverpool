@@ -82,7 +82,7 @@ export default function Calor() {
       <header className="bg-white border-gray-100 shadow-xl rounded-md p-5">
         <div>
           <h1 className="text-2xl text-center justify-center font-bold">
-            Grafica de Calor
+            Gráfica de Calor
           </h1>
           <Chart type="treemap" data={chartData} options={options}></Chart>
         </div>
