@@ -26,10 +26,10 @@ export default function Tabla() {
     <>
       <div className="pb-10 px-20 bg-white">
       <h1 className="text-3xl font-bold tracking-tight text-pink-800">
-          ¡Un vistazo al futuro de tu equipo!
+          Un vistazo a tu archivo
         </h1>
         <h1 className="pt-5 font-light text-gray-700 md:text-lg">
-          Visualiza una muestra de tu nuevo archivo con los resultados de la predicción. 
+          Visualiza una muestra del archivo que acabas de ingresar. 
         </h1>
       </div>
       <div className="pb-20 px-20 bg-white">

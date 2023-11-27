@@ -32,7 +32,7 @@ export default function Tabla2() {
           Un vistazo a tu predicción 
         </h1>
         <h1 className="pt-5 font-light text-gray-700 md:text-lg">
-          Análiza cuanto de tu personal podria ser propenso a irse. 
+          Conoce cuánto personal es propenso a renunciar. 
         </h1>
       </div>
       <div className="pb-20 px-20 bg-white flex flex-row gap-4">
