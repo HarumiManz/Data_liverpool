@@ -188,21 +188,10 @@ class Reader:
         collection = self.db[collectionName]
         
         pipeline = [
-            {
-                "$group": {
-                "_id": "$tienda",
-                "cambiosPuestoPromedio": { "$avg": "$cambios de puesto" },
-                "antiguedadPromedio": { "$avg": "$antiguedad" }
-                }
-            },
-            {
-                "$project": {
-                "_id": 0,
-                "tienda": "$_id",
-                "cambiosPuestoPromedio": 1,
-                "antiguedadPromedio": 1
-                }
-            }
+            {"$match": {"Estatus": "renuncia"}},  # Filtra solo los documentos con estatus "renuncia"
+            {"$group": {"_id": "$area", "promedioEdad": {"$avg": "$edad"}, "orden": {"$sum": 1}}},
+            {"$sort": {"orden": -1}},
+            {"$limit": 10}
         ]
         tienda = list(collection.aggregate(pipeline))
         return tienda
