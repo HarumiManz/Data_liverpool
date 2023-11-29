@@ -18,6 +18,7 @@ MONGO_URL = "mongodb://localhost:27017"
 app = Flask("Back Liverpool")
 CORS(app)
 
+columnas con su modas y promedios 
 model: CatBoostClassifier = joblib.load("./model.pkl")
 features_info = {
     "edad": {"default": 30, "type": int},
@@ -29,7 +30,7 @@ features_info = {
     "generacion": {"default": "millennial", "type": str},
 }
 
-
+#sube el doemento y lo transforma 
 @app.route("/upload", methods=["POST"])
 def upload():
     # File save
@@ -70,7 +71,7 @@ def upload():
         200,
     )
 
-
+#cambia a partir de la fehca de nacimiento a generaciones 
 def clasificar_generacion(fecha_nacimiento):
     fecha_nacimiento = datetime.datetime.strptime(fecha_nacimiento, "%Y-%m-%d")
     if 1946 <= fecha_nacimiento.year <= 1964:
