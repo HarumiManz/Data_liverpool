@@ -52,7 +52,7 @@ npm install --save chart.js react-chartjs-2
 npm install chartjs-chart-treemap
 ```
 
-To update the node package you only need to do
+to create the node modules folder or to update you only need to enter the following: 
 
 ```bash
 npm i
