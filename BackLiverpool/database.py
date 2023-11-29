@@ -13,19 +13,22 @@ class Reader:
 
     def read_row(self, row: dict):
         self.knowledge.append(row)
-
+        
+    #inserta los datos 
     def push_to_db(self, collectionName):
         collection = self.db[collectionName]
         result = collection.insert_many(self.knowledge)
         inserted_ids = result.inserted_ids
 
         print(f"{len(self.knowledge)} rows inserted in NO SQL DB")
-        
+
+    #Elimina la coleccion en mongo
     def drop_collection(self, collectionName):
         collection = self.db[collectionName]
         collection.drop()
         print("Se borro coleccion")
-        
+
+    #obtiene todos los documentos 
     def get_docs(self, collectionName):
         collection = self.db[collectionName]
         documents = collection.find({})
