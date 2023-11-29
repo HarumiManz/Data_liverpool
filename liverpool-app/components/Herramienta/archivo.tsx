@@ -143,37 +143,51 @@ export default function Archivo() {
                 >
                   <div className="z-[100] fixed -left-0 top-0 grid h-full w-full grid-cols-12  bg-slate-600 bg-opacity-90">
                     <div className=" z-[1000]  col-span-8 col-start-3 my-[8rem] grid grid-cols-6  rounded-2xl bg-white text-start shadow-lg text-black">
-                      <h1 className="col-span-6 row-span-1 m-8 mb-0 text-2xl font-bold text-black">
-                        Selecciona tus caracteristicas
-                      </h1>
-                      <div className="grid grid-cols-2 gap-4 bg-slate-100 col-span-6 m-10">
-                        {modelFeatures.map((feature: any, index: any) => (
-                          <div key={index} className="flex flex-col">
-                            <label className="capitalize font-bold">
-                              {feature}:{" "}
-                            </label>
-                            <select
-                              name={feature}
-                              onChange={handleSelectionChange}
-                              className="p-2 border border-pink-300 rounded m-1"
-                            >
-                              {fileHeaders.map(
-                                (fileFeature: any, fileIndex: any) => (
-                                  <option key={fileIndex} value={fileFeature}>
-                                    {fileFeature}
-                                  </option>
-                                )
-                              )}
-                            </select>
+                      {fileUploading ? (
+                        <div className="col-span-6 h-[60%] justify-center content-center flex align-middle items-center">
+                          <div className="w-[50%] h-[50%] p-10">
+                            <Lottie animationData={cat} 
+                            />
                           </div>
-                        ))}
-                        <button
-                          onClick={handlePredict}
-                          className="border-2 border-rose-200 rounded-lg"
-                        >
-                          Predice!
-                        </button>
-                      </div>
+                        </div>
+                      ) : (
+                        <>
+                          <h1 className="col-span-6 row-span-1 m-8 mb-0 text-2xl font-bold text-black">
+                            Selecciona tus caracteristicas
+                          </h1>
+                          <div className="grid grid-cols-2 gap-4 bg-white col-span-6 m-10">
+                            {modelFeatures.map((feature: any, index: any) => (
+                              <div key={index} className="flex flex-col">
+                                <label className="capitalize font-bold">
+                                  {feature}:{" "}
+                                </label>
+                                <select
+                                  name={feature}
+                                  onChange={handleSelectionChange}
+                                  className="p-2 border border-pink-300 rounded m-1"
+                                >
+                                  {fileHeaders.map(
+                                    (fileFeature: any, fileIndex: any) => (
+                                      <option
+                                        key={fileIndex}
+                                        value={fileFeature}
+                                      >
+                                        {fileFeature}
+                                      </option>
+                                    )
+                                  )}
+                                </select>
+                              </div>
+                            ))}
+                            <button
+                              onClick={handlePredict}
+                              className="border-2 border-rose-200 rounded-lg"
+                            >
+                              Predice!
+                            </button>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
