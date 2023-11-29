@@ -28,7 +28,7 @@ export default function Dashboard() {
             <Dispersion />
           </div>
           <div>
-            <Barra />
+            <BarraDoble />
           </div>
         </div>
         <div className="py-5 px-10 bg-white grid grid-cols-2 md:grid-cols-2 gap-4">
