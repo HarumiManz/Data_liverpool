@@ -41,6 +41,7 @@ To install this dependency, you type on the terminal
 ```bash
 pip install openai
 ```
+No forget to put your API key in the 'route.tsx' file inside the 'api' folder.
 
 Finally, it uses React-Chartjs-2 and Chartjs-chart-treemap to structure and generate the graphs one can see in the website. The first package is an adapter for components found in Chartjs to use in Reactjs projects. The second one is an add-on for Chartjs to be able to generate treemaps, a graph that was used on the project.
 
